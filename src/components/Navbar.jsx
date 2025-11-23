@@ -9,7 +9,7 @@ const Navbar = () => {
       <ul className='flex justify-between gap-3'>
         <li className='hover:bg-gray-500 p-3 px-10 cursor-pointer rounded-bl-4xl' onClick={()=>navigate("/")}>Home</li>
         <li className='hover:bg-gray-500 p-3 px-10 cursor-pointer' onClick={()=>navigate("/experience")}>Experience</li>
-        <li className='hover:bg-gray-500 p-3 px-10 cursor-pointer' onClick={()=>navigate('#skill')}>Skills</li>
+        <li className='hover:bg-gray-500 p-3 px-10 cursor-pointer' onClick={()=>navigate('/skills')}>Skills</li>
         <li className='hover:bg-gray-500 p-3 px-10 cursor-pointer' onClick={()=>navigate("/projects")}>Projects</li>
         <li className='hover:bg-gray-500 p-3 px-10 cursor-pointer rounded-br-4xl' onClick={()=>navigate("/about")}>About Me</li>
       </ul>

@@ -9,7 +9,7 @@ import { SiExpress, SiMongodb } from "react-icons/si";
 export default function Home() {
   return (
     <div className="bg-gray-200">
-      <div className='w-full bg-[url("/me.png")] p-36 bg-center text-white bg-cover'>
+      <div className='w-full bg-[url("/me.png")] p-10 bg-top text-white bg-cover'>
         <div className='flex justify-end items-center p-10'>
           <div className='flex flex-col gap-2'>
             <h1 className='text-6xl font-extrabold'>Jay Joshi</h1>

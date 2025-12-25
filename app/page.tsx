@@ -83,6 +83,17 @@ export default function Home() {
         </div>
       </section>
 
+      <section id='currentLearnings' className='mt-10 px-30 flex flex-col gap-5'>
+        <h1 className='text-4xl font-bold'>Current Learnings</h1>
+        <div className="w-full flex bg-white gap-4 overflow-clip rounded-2xl shadow-2xl">
+          <img width={600} src="CurrLea.png" alt="" />
+          <div className="flex flex-col gap-3 p-5">
+            <h1 className="font-bold text-xl">React Native - Privacy First AI Chatbot</h1>
+            <p>I am leaning about AI Agents. i am think to build a chatbot but i want to fix a problem of other chatbot. So i find a problem that every chatbot calls backend and then use databse to save memory. this is privacy issue user's personal chat's are stored on cloud. So i think to store memory locally in device for privacy of user.</p>
+          </div>
+        </div>
+      </section>
+
       <section className='px-30 py-22'>
         <div className='flex justify-between'>
           <h1 className='text-4xl font-bold'>Projects</h1>

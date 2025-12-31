@@ -90,6 +90,8 @@ export default function Home() {
           <div className="flex flex-col gap-3 p-5">
             <h1 className="font-bold text-xl">React Native - Privacy First AI Chatbot</h1>
             <p>I am leaning about AI Agents. i am think to build a chatbot but i want to fix a problem of other chatbot. So i find a problem that every chatbot calls backend and then use databse to save memory. this is privacy issue user's personal chat's are stored on cloud. So i think to store memory locally in device for privacy of user.</p>
+            <p>Currently Working in notification feature. AI Agent Can schedule notifications</p>
+            <p>Visit now: <a className="text-blue-400" href="https://privacy-agent-app-download.vercel.app">https://privacy-agent-app-download.vercel.app</a></p>
           </div>
         </div>
       </section>

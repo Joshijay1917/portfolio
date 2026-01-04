@@ -3,7 +3,7 @@ import { FaExternalLinkAlt } from 'react-icons/fa'
 const Attendance = () => {
     return (
         <div className='bg-gray-200 pb-10'>
-            <div className='bg-[url("https://g4c7y7r6.delivery.rocketcdn.me/wp-content/uploads/2025/07/A-teacher-stands-by-a-chalkboard-with-a-CLASSROOM-MANAGEMENT-QR-code-poster-taking-attendance-as-four-students-listen-attentively-in-a-morning-classroom-setting.png")] bg-no-repeat bg-cover bg-center p-20 absolute mt-26 top-0 w-full'>
+            <div className='bg-[url("/bgattendance.png")] bg-no-repeat bg-cover bg-center p-20 absolute mt-26 top-0 w-full'>
                 <h1 className='text-5xl text-white font-bold'>Smart Attendance System</h1>
             </div>
 

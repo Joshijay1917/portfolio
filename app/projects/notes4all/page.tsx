@@ -4,7 +4,7 @@ import { FaExternalLinkAlt } from 'react-icons/fa'
 const Notes4All = () => {
     return (
         <div className='pb-10 bg-gray-200'>
-            <div className='bg-[url("https://bau.edu/wp-content/uploads/2021/11/how-to-take-notes-in-college.jpg")] bg-center p-20 absolute mt-26 top-0 w-full'>
+            <div className='bg-[url("/notes.jpg")] bg-center p-20 absolute mt-26 top-0 w-full'>
                 <h1 className='text-5xl text-white font-bold'>Notes4All</h1>
             </div>
 

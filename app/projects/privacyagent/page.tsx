@@ -4,7 +4,7 @@ import { FaExternalLinkAlt } from 'react-icons/fa'
 function privacyagent() {
     return (
         <div className='bg-gray-200 pb-10'>
-            <div className='bg-[url("https://static.investindia.gov.in/s3fs-public/2024-01/Ensuring%20Responsible%20and%20Trustworthy%20AI%20for%20All.png")] bg-center p-10 absolute mt-26 top-0 w-full'>
+            <div className='bg-[url("/aibg.png")] bg-center p-10 absolute mt-26 top-0 w-full'>
                 <div className='flex justify-around gap-80 items-center mr-40'>
                     <h1 className='text-5xl text-white font-bold'>Privacy Agent</h1>
                     <img src="/privacylogo.png" className='w-34 h-34 rounded-3xl' />

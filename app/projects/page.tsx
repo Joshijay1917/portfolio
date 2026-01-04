@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { FaArrowRight, FaCss3Alt, FaHtml5, FaNodeJs, FaReact } from 'react-icons/fa'
+import { PiFileSqlDuotone } from 'react-icons/pi'
 import { SiCloudinary, SiExpress, SiJavascript, SiMongodb, SiTensorflow } from 'react-icons/si'
 
 const Projects = () => {
@@ -11,6 +12,21 @@ const Projects = () => {
       </div>
 
       <div className='relative pb-20 pt-45 z-20 flex flex-col gap-10'>
+        <div className='flex gap-3 w-3/4 bg-white rounded-2xl shadow-2xl overflow-clip mx-auto'>
+          <img width={500} className='border shadow-lg border-gray-300' src="/privacyagent.png" />
+          <div className='p-5 flex flex-col gap-5'>
+            <h1 className='text-2xl font-medium'>Privacy Agent</h1>
+            <p>A complete full stack AI-Driven Mobile Assistant with On-Device Memory. Stores all user chats and LLM Memory locally on device.</p>
+            <div className='flex text-4xl gap-5'>
+              <FaReact className='text-blue-400' />
+              <FaNodeJs className='text-green-400' />
+              <SiExpress className='text-gray-600' />
+              <PiFileSqlDuotone className='text-blue-400' />
+            </div>
+            <Link href={'/projects/privacyagent'} className='flex items-center text-blue-600 gap-3 text-xl cursor-pointer'>See details <FaArrowRight /></Link>
+          </div>
+        </div>
+
         <div className='flex gap-3 w-3/4 bg-white rounded-2xl shadow-2xl overflow-clip mx-auto'>
           <img width={500} className='border shadow-lg border-gray-300' src="notes4all.png" />
           <div className='p-5 flex flex-col gap-5'>

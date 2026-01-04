@@ -4,7 +4,8 @@ import { FaArrowRight, FaCss3Alt, FaHtml5, FaNodeJs, FaReact, FaStar } from "rea
 import { GrMysql } from "react-icons/gr";
 import { IoBookmark } from "react-icons/io5";
 import { RiJavascriptFill } from "react-icons/ri";
-import { SiExpress, SiMongodb } from "react-icons/si";
+import { SiExpress, SiMongodb, SiNextdotjs } from "react-icons/si";
+import { TbBrandReactNative } from "react-icons/tb";
 
 export default function Home() {
   return (
@@ -80,10 +81,20 @@ export default function Home() {
             <h2 className='text-2xl font-medium'>MySQL</h2>
             <p>MySQL is a relational database management system in which we can store and retrive data efficiently.</p>
           </div>
+          <div className='bg-white shadow-2xl m-3 rounded-2xl p-5'>
+            <TbBrandReactNative className='text-blue-400 text-4xl'/>
+            <h2 className='text-2xl font-medium'>React Native</h2>
+            <p>React Native is an open-source UI software framework to build native mobile applications for iOS and Android using JavaScript and React.</p>
+          </div>
+          <div className='bg-white shadow-2xl m-3 rounded-2xl p-5'>
+            <SiNextdotjs className='text-black text-4xl'/>
+            <h2 className='text-2xl font-medium'>Next JS</h2>
+            <p>Next.js is an open-source React framework for building fast, full-stack web applications.</p>
+          </div>
         </div>
       </section>
 
-      <section id='currentLearnings' className='mt-10 px-30 flex flex-col gap-5'>
+      {/* <section id='currentLearnings' className='mt-10 px-30 flex flex-col gap-5'>
         <h1 className='text-4xl font-bold'>Current Learnings</h1>
         <div className="w-full flex bg-white gap-4 overflow-clip rounded-2xl shadow-2xl">
           <img width={600} src="CurrLea.png" alt="" />
@@ -94,15 +105,15 @@ export default function Home() {
             <p>Visit now: <a className="text-blue-400" href="https://privacy-agent-app-download.vercel.app">https://privacy-agent-app-download.vercel.app</a></p>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <section className='px-30 py-22'>
-        <div className='flex justify-between'>
+      <section className='px-18 py-22'>
+        <div className='flex px-16 justify-between'>
           <h1 className='text-4xl font-bold'>Projects</h1>
           <Link href={'/projects'} className='flex items-center gap-3 text-blue-600 text-2xl cursor-pointer'>Show all projects <FaArrowRight /></Link>
         </div>
-        <div className='m-10 grid grid-cols-3'>
-          <div className='w-[500px] bg-white rounded-2xl overflow-clip shadow-2xl'>
+        <div className='m-10 mr-40 grid grid-cols-4'>
+          <div className='w-[450px] bg-white rounded-2xl overflow-clip shadow-2xl'>
             <img src="notes4all.png" />
             <div className='flex flex-col gap-5 p-5'>
               <h2 className='font-medium text-3xl'>Notes4All</h2>
@@ -110,7 +121,7 @@ export default function Home() {
               <a href="/projects/notes4all" className='flex text-blue-600 items-center gap-3'>View More <FaArrowRight /></a>
             </div>
           </div>
-          <div className='w-[500px] bg-white rounded-2xl overflow-clip shadow-2xl'>
+          <div className='w-[450px] bg-white rounded-2xl overflow-clip shadow-2xl'>
             <img src="payment.png" />
             <div className='flex flex-col gap-5 p-5'>
               <h2 className='font-medium text-3xl'>Smart AI Payment Tracker</h2>
@@ -118,12 +129,20 @@ export default function Home() {
               <a href="/projects/payment" className='flex text-blue-600 items-center gap-3'>View More <FaArrowRight /></a>
             </div>
           </div>
-          <div className='w-[500px] bg-white rounded-2xl overflow-clip shadow-2xl'>
+          <div className='w-[450px] bg-white rounded-2xl overflow-clip shadow-2xl'>
             <img src="attendance.png" />
             <div className='flex flex-col gap-5 p-5'>
               <h2 className='font-medium text-3xl'>Smart Attendance System</h2>
               <p>A complete full stack project to take student attendance through QR Code.</p>
               <a href="/projects/attendance" className='flex text-blue-600 items-center gap-3'>View More <FaArrowRight /></a>
+            </div>
+          </div>
+          <div className='w-[450px] bg-white rounded-2xl overflow-clip shadow-2xl'>
+            <img src="privacyagent.png" />
+            <div className='flex flex-col gap-5 p-5'>
+              <h2 className='font-medium text-3xl'>Privacy Agent</h2>
+              <p>A complete full stack AI-Driven Mobile Assistant with On-Device Memory.</p>
+              <a href="/projects/privacyagent" className='flex text-blue-600 items-center gap-3'>View More <FaArrowRight /></a>
             </div>
           </div>
         </div>

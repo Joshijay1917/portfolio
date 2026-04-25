@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { FaArrowRight, FaCss3Alt, FaHtml5, FaNodeJs, FaReact } from 'react-icons/fa'
 import { PiFileSqlDuotone } from 'react-icons/pi'
 import { SiCloudinary, SiExpress, SiJavascript, SiMongodb, SiTensorflow } from 'react-icons/si'
@@ -13,7 +14,7 @@ const Projects = () => {
 
       <div className='relative pb-20 pt-45 z-20 flex flex-col gap-10'>
         <div className='flex gap-3 w-3/4 bg-white rounded-2xl shadow-2xl overflow-clip mx-auto'>
-          <img width={500} className='border shadow-lg border-gray-300' src="/privacyagent.png" />
+          <Image width={500} height={300} className='border shadow-lg border-gray-300 object-cover' src="/privacyagent.png" alt="Privacy Agent" />
           <div className='p-5 flex flex-col gap-5'>
             <h1 className='text-2xl font-medium'>Privacy Agent</h1>
             <p>A complete full stack AI-Driven Mobile Assistant with On-Device Memory. Stores all user chats and LLM Memory locally on device.</p>
@@ -28,7 +29,7 @@ const Projects = () => {
         </div>
 
         <div className='flex gap-3 w-3/4 bg-white rounded-2xl shadow-2xl overflow-clip mx-auto'>
-          <img width={500} className='border shadow-lg border-gray-300' src="notes4all.png" />
+          <Image width={500} height={300} className='border shadow-lg border-gray-300 object-cover' src="/notes4all.png" alt="Notes4All" />
           <div className='p-5 flex flex-col gap-5'>
             <h1 className='text-2xl font-medium'>Notes4All</h1>
             <p>A full stack project to help students for notes, assignments and lab manuals. Students can login and download pdf of notes or read it from anywhere. it helps students for their exams.</p>
@@ -56,11 +57,11 @@ const Projects = () => {
             </div>
             <Link href={'/projects/payment'} className='flex items-center text-blue-600 gap-3 text-xl cursor-pointer'>See details <FaArrowRight /></Link>
           </div>
-          <img width={500} className='border shadow-lg border-gray-300' src="payment.png" />
+          <Image width={500} height={300} className='border shadow-lg border-gray-300 object-cover' src="/payment.png" alt="Smart AI Payment Tracker" />
         </div>
 
         <div className='flex gap-3 w-3/4 bg-white rounded-2xl shadow-2xl overflow-clip mx-auto'>
-          <img width={500} className='border shadow-lg border-gray-300' src="attendance.png" />
+          <Image width={500} height={300} className='border shadow-lg border-gray-300 object-cover' src="/attendance.png" alt="Smart Attendance System" />
           <div className='p-5 flex flex-col gap-5'>
             <h1 className='text-2xl font-medium'>Smart Attendance System</h1>
             <p>A full stack project to help colleges to take attendance of students quickly save time of faculty. I am use <strong>WebSockets</strong> to see realtime student attendance to faculty.</p>
@@ -85,11 +86,11 @@ const Projects = () => {
             </div>
             {/* <p className='flex items-center text-blue-600 gap-3 text-xl cursor-pointer'>See details <FaArrowRight /></p> */}
           </div>
-          <img width={500} className='border shadow-lg border-gray-300' src="spotify.png" />
+          <Image width={500} height={300} className='border shadow-lg border-gray-300 object-cover' src="/spotify.png" alt="Spotify Clone" />
         </div>
 
         <div className='flex gap-3 w-3/4 bg-white rounded-2xl shadow-2xl overflow-clip mx-auto'>
-          <img width={500} className='border shadow-lg border-gray-300' src="ele.png" />
+          <Image width={500} height={300} className='border shadow-lg border-gray-300 object-cover' src="/ele.png" alt="Electroplating Order Management" />
           <div className='p-5 flex flex-col gap-5'>
             <h1 className='text-2xl font-medium'>Electroplating Order Management System</h1>
             <p>This is a order management system to manage customers, orders and invoices. this is a PWA (Prograssive web app) for smartphones.</p>

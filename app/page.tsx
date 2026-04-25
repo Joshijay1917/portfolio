@@ -10,11 +10,18 @@ import { TbBrandReactNative } from "react-icons/tb";
 export default function Home() {
   return (
     <div className="bg-gray-200">
-      <div className='w-full bg-[url("/me.png")] p-10 bg-top text-white bg-cover'>
-        <div className='flex justify-end items-center p-10'>
+      <div className='relative w-full h-[600px] text-white overflow-hidden'>
+        <Image
+          src="/me.jpg"
+          alt="Jay Joshi Background"
+          fill
+          priority
+          className="object-cover object-top"
+        />
+        <div className='flex justify-end items-center p-20 h-full relative z-10'>
           <div className='flex flex-col gap-2'>
             <h1 className='text-6xl font-extrabold'>Jay Joshi</h1>
-            <p className='text-4xl font-bold'>Entusiastic</p>
+            <p className='text-4xl font-bold'>Enthusiastic</p>
             <p className='text-4xl font-bold'>Full Stack Developer</p>
             <div className='flex text-2xl gap-10 mt-5 font-medium text-white'>
               <div className='flex flex-col items-center'>
@@ -42,52 +49,52 @@ export default function Home() {
         <h1 className='text-4xl font-bold text-center'>Skills - Which Technologies I Know</h1>
         <div className='grid grid-cols-4 mx-30 p-10'>
           <div className='bg-white shadow-2xl m-3 rounded-2xl p-5'>
-            <FaNodeJs className='text-green-400 text-4xl'/>
+            <FaNodeJs className='text-green-400 text-4xl' />
             <h2 className='text-2xl font-medium'>Node JS</h2>
-            <p>NodeJS a Javascript framwork to run javascript outside the borwser.</p>
+            <p>NodeJS a Javascript framework to run javascript outside the browser.</p>
           </div>
           <div className='bg-white shadow-2xl m-3 rounded-2xl p-5'>
-            <FaReact className='text-blue-400 text-4xl'/>
+            <FaReact className='text-blue-400 text-4xl' />
             <h2 className='text-2xl font-medium'>React JS</h2>
             <p>React.js is a free and open-source Javascript library for building User Interfaces.</p>
           </div>
           <div className='bg-white shadow-2xl m-3 rounded-2xl p-5'>
-            <SiExpress className='text-gray-600 text-4xl'/>
+            <SiExpress className='text-gray-600 text-4xl' />
             <h2 className='text-2xl font-medium'>Express JS</h2>
             <p>Express JS a Node JS framework which provides robust features for web applications and APIs.</p>
           </div>
           <div className='bg-white shadow-2xl m-3 rounded-2xl p-5'>
-            <SiMongodb className='text-green-400 text-4xl'/>
+            <SiMongodb className='text-green-400 text-4xl' />
             <h2 className='text-2xl font-medium'>MongoDB</h2>
             <p>MongoDB is a non-relational database to store data in document form.</p>
           </div>
           <div className='bg-white shadow-2xl m-3 rounded-2xl p-5'>
-            <FaHtml5 className='text-orange-400 text-4xl'/>
+            <FaHtml5 className='text-orange-400 text-4xl' />
             <h2 className='text-2xl font-medium'>HTML</h2>
-            <p>HTML is a skaleton of any website.it is a basic staructure of web application.</p>
+            <p>HTML is a skeleton of any website. it is a basic structure of web application.</p>
           </div>
           <div className='bg-white shadow-2xl m-3 rounded-2xl p-5'>
-            <FaCss3Alt className='text-blue-400 text-4xl'/>
+            <FaCss3Alt className='text-blue-400 text-4xl' />
             <h2 className='text-2xl font-medium'>CSS</h2>
             <p>Css is style sheet language used for describing the presentation of document.</p>
           </div>
           <div className='bg-white shadow-2xl m-3 rounded-2xl p-5'>
-            <RiJavascriptFill className='text-yellow-400 text-4xl'/>
+            <RiJavascriptFill className='text-yellow-400 text-4xl' />
             <h2 className='text-2xl font-medium'>Javascript</h2>
             <p>Javascript enables dynamic and interactive content in web pages.</p>
           </div>
           <div className='bg-white shadow-2xl m-3 rounded-2xl p-5'>
-            <GrMysql className='text-blue-400 text-4xl'/>
+            <GrMysql className='text-blue-400 text-4xl' />
             <h2 className='text-2xl font-medium'>MySQL</h2>
-            <p>MySQL is a relational database management system in which we can store and retrive data efficiently.</p>
+            <p>MySQL is a relational database management system in which we can store and retrieve data efficiently.</p>
           </div>
           <div className='bg-white shadow-2xl m-3 rounded-2xl p-5'>
-            <TbBrandReactNative className='text-blue-400 text-4xl'/>
+            <TbBrandReactNative className='text-blue-400 text-4xl' />
             <h2 className='text-2xl font-medium'>React Native</h2>
             <p>React Native is an open-source UI software framework to build native mobile applications for iOS and Android using JavaScript and React.</p>
           </div>
           <div className='bg-white shadow-2xl m-3 rounded-2xl p-5'>
-            <SiNextdotjs className='text-black text-4xl'/>
+            <SiNextdotjs className='text-black text-4xl' />
             <h2 className='text-2xl font-medium'>Next JS</h2>
             <p>Next.js is an open-source React framework for building fast, full-stack web applications.</p>
           </div>
@@ -112,92 +119,103 @@ export default function Home() {
           <h1 className='text-4xl font-bold'>Projects</h1>
           <Link href={'/projects'} className='flex items-center gap-3 text-blue-600 text-2xl cursor-pointer'>Show all projects <FaArrowRight /></Link>
         </div>
-        <div className='m-10 mr-40 grid grid-cols-4'>
-          <div className='w-[450px] bg-white rounded-2xl overflow-clip shadow-2xl'>
-            <img src="notes4all.png" />
+        <div className='m-10 mr-40 grid grid-cols-4 gap-6'>
+          <Link href={'/projects/notes4all'} className='w-[450px] bg-white rounded-2xl overflow-clip shadow-2xl'>
+            <Image src="/notes4all.png" alt="Notes4All project" width={450} height={250} className="w-full object-cover" />
             <div className='flex flex-col gap-5 p-5'>
               <h2 className='font-medium text-3xl'>Notes4All</h2>
               <p>A complete full stack project to help students for notes, assignments and lab manuals.</p>
-              <a href="/projects/notes4all" className='flex text-blue-600 items-center gap-3'>View More <FaArrowRight /></a>
+              <div className='flex text-blue-600 items-center gap-3'>View More <FaArrowRight /></div>
             </div>
-          </div>
-          <div className='w-[450px] bg-white rounded-2xl overflow-clip shadow-2xl'>
-            <img src="payment.png" />
+          </Link>
+          <Link href={'/projects/payment'} className='w-[450px] bg-white rounded-2xl overflow-clip shadow-2xl'>
+            <Image src="/payment.png" alt="Smart AI Payment Tracker" width={450} height={250} className="w-full object-cover" />
             <div className='flex flex-col gap-5 p-5'>
               <h2 className='font-medium text-3xl'>Smart AI Payment Tracker</h2>
               <p>A complete full stack project to track customer payments with pridction of payment delay or not.</p>
-              <a href="/projects/payment" className='flex text-blue-600 items-center gap-3'>View More <FaArrowRight /></a>
+              <div className='flex text-blue-600 items-center gap-3'>View More <FaArrowRight /></div>
             </div>
-          </div>
-          <div className='w-[450px] bg-white rounded-2xl overflow-clip shadow-2xl'>
-            <img src="attendance.png" />
+          </Link>
+          <Link href={'/projects/attendance'} className='w-[450px] bg-white rounded-2xl overflow-clip shadow-2xl'>
+            <Image src="/attendance.png" alt="Smart Attendance System" width={450} height={250} className="w-full object-cover" />
             <div className='flex flex-col gap-5 p-5'>
               <h2 className='font-medium text-3xl'>Smart Attendance System</h2>
               <p>A complete full stack project to take student attendance through QR Code.</p>
-              <a href="/projects/attendance" className='flex text-blue-600 items-center gap-3'>View More <FaArrowRight /></a>
+              <div className='flex text-blue-600 items-center gap-3'>View More <FaArrowRight /></div>
             </div>
-          </div>
-          <div className='w-[450px] bg-white rounded-2xl overflow-clip shadow-2xl'>
-            <img src="privacyagent.png" />
+          </Link>
+          <Link href={'/projects/privacyagent'} className='w-[450px] bg-white rounded-2xl overflow-clip shadow-2xl'>
+            <Image src="/privacyagent.png" alt="Privacy Agent AI Assistant" width={450} height={250} className="w-full object-cover" />
             <div className='flex flex-col gap-5 p-5'>
               <h2 className='font-medium text-3xl'>Privacy Agent</h2>
               <p>A complete full stack AI-Driven Mobile Assistant with On-Device Memory.</p>
-              <a href="/projects/privacyagent" className='flex text-blue-600 items-center gap-3'>View More <FaArrowRight /></a>
+              <div className='flex text-blue-600 items-center gap-3'>View More <FaArrowRight /></div>
             </div>
-          </div>
+          </Link>
         </div>
       </section>
 
       <section className='px-30 pb-20 relative'>
         <h1 className='text-4xl font-bold text-center'>Education</h1>
         <div className='bg-white'>
-          <hr className='absolute rotate-90 top-14 left-0 w-[20%] py-50'/>
+          <hr className='absolute rotate-90 top-14 left-0 w-[20%] py-50' />
           <div className='absolute top-30 left-82 bg-blue-400 w-[3%] h-[8%] rounded-full'></div>
           <div className='absolute top-88 left-82 bg-blue-400 w-[3%] h-[8%] rounded-full'></div>
         </div>
         <div className='bg-white p-7 mt-10 w-1/2 mx-auto shadow-2xl rounded-2xl'>
           <div className='flex gap-3 items-center pb-3'>
-            <FaStar className='bg-yellow-400/20 text-yellow-400 p-2 rounded-full text-4xl'/>
+            <FaStar className='bg-yellow-400/20 text-yellow-400 p-2 rounded-full text-4xl' />
             <div>
               <p className='text-blue-400 text-xl font-medium'>2022-2024</p>
               <h1 className='text-2xl font-medium'>Higher School</h1>
             </div>
           </div>
-          <p>I completed my Higher Secondary Education at Patanjali School, Rajkot, where I secured 85% in 11th and 92.49% in 12th (Gujarat Board). I also qualified JEE with an 89 percentile.</p>
+          <p>I completed my Higher Secondary Education at Patanjali School, Rajkot, where I secured <strong>85%</strong> in 11th and <strong>92.49%</strong> in 12th (Gujarat Board). I also qualified JEE with an <strong>89 percentile</strong>.</p>
         </div>
         <div className='bg-white p-7 mt-10 w-1/2 mx-auto shadow-2xl rounded-2xl'>
           <div className='flex gap-3 items-center pb-3'>
-            <FaStar className='bg-green-400/20 text-green-400 p-2 rounded-full text-4xl'/>
+            <FaStar className='bg-green-400/20 text-green-400 p-2 rounded-full text-4xl' />
             <div>
               <p className='text-blue-400 text-xl font-medium'>2024-2028</p>
-              <h1 className='text-2xl font-medium'>Bachlor's Degree</h1>
+              <h1 className='text-2xl font-medium'>Bachelor's Degree</h1>
             </div>
           </div>
-          <p>I am currently pursuing my Bachelor's degree in Computer Science at V.V.P. Engineering College, Rajkot. I have maintained a <strong>9.13 CGPA</strong> in my first year.</p>
+          <p>I am currently pursuing my Bachelor's degree in Computer Science at V.V.P. Engineering College, Rajkot. I have maintained a <strong>9.13 CPI</strong> in my first year.</p>
         </div>
       </section>
 
       <section id='experience' className='p-14'>
         <h1 className='text-4xl font-bold text-center'>Experience</h1>
-        <div className='grid grid-cols-2 w-3/4 mx-auto m-10 gap-5'>
+        <div className='grid grid-cols-3 w-full mx-auto m-10 gap-5'>
           <div className='rounded-2xl overflow-clip bg-white shadow-2xl'>
             <div className='relative'>
-              <img src="h2.png" />
-              <IoBookmark className='text-yellow-400 text-5xl absolute bottom-[-20px] right-5'/>
+              <Image src="/h2.jpg" alt="Gardi Vidhyapith Hackathon" width={600} height={300} className="w-full object-cover" />
+              <IoBookmark className='text-yellow-400 text-5xl absolute bottom-[-20px] right-5' />
             </div>
             <div className='p-5'>
               <h1 className='text-2xl font-medium py-5'>Gardi Vidhyapith Hackathon</h1>
-              <p>This is a 24 Hachathon organized in my city. My team is tasked to create a Customer Relationship Management System. I am work as a backend developer. I created routes using NodeJS and store and manage data in mongodb.</p>
+              <p>This is a 24 Hour Hackathon organized in my city. My team is tasked to create a Customer Relationship Management System. I am work as a backend developer. I created routes using NodeJS and store and manage data in mongodb.</p>
             </div>
           </div>
           <div className='rounded-2xl overflow-clip bg-white shadow-2xl'>
-             <div className='relative'>
-                <img src="h1.png" />
-                <IoBookmark className='text-yellow-400 text-5xl absolute bottom-[-20px] right-5'/>
-             </div>
+            <div className='relative'>
+              <Image src="/white-fox.jpg" alt="MERN Intern" width={600} height={300} className="w-full object-cover h-[320px]" />
+              <IoBookmark className='text-yellow-400 text-5xl absolute bottom-[-20px] right-5' />
+            </div>
+            <div className='p-5'>
+              <h1 className='text-2xl font-medium py-5'>MERN Intern at White Label Fox Pvt. Ltd.</h1>
+              <h3>January 2026 - March 2026</h3>
+              <p>I am worked as a MERN Intern at White Label Fox Pvt. Ltd. Through this internship i am learn about real world poduct development.in this internship i work on NodeJs, ExpressJs, NestJs, NextJs, MongoDB and PostgresSQL.</p>
+            </div>
+          </div>
+          <div className='rounded-2xl overflow-clip bg-white shadow-2xl'>
+            <div className='relative'>
+              <Image src="/h1.png" alt="Code Carnival Hackathon" width={600} height={300} className="w-full object-cover" />
+              <IoBookmark className='text-yellow-400 text-5xl absolute bottom-[-20px] right-5' />
+            </div>
             <div className='p-5'>
               <h1 className='text-2xl font-medium py-5'>Code Carnival Hackathon</h1>
-              <p>This is a 36 hours hackthon organized in atmity university Rajkot. Our team is tasked to create a smart AI payment tracker for SMEs. I am work as a backend developer and trained a machine learing model using TensorflowJS.</p>
+              <p>This is a 36 hours hackathon organized in atmity university Rajkot. Our team is tasked to create a smart AI payment tracker for SMEs. I am work as a backend developer and trained a machine learning model using TensorflowJS.</p>
             </div>
           </div>
         </div>

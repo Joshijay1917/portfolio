@@ -1,5 +1,6 @@
 "use client"
 import Link from 'next/link'
+import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import React from 'react'
 import { BiLogoGmail } from 'react-icons/bi'
@@ -11,8 +12,8 @@ const Footer = () => {
   return (
     <div className='bg-gray-800 p-30 text-white grid grid-cols-3'>
       <div className='w-3/4 flex flex-col gap-3'>
-        <img width={90} src="portfolio_image-removebg-preview.png" alt="" />
-        <p>I am intrested in backend development and continously learing about it. If you find a backend developer than feel free to ask.</p>
+        <Image width={90} height={90} src="/portfolio_image-removebg-preview.png" alt="Portfolio Logo" />
+        <p>I am interested in backend development and continuously learning about it. If you find a backend developer then feel free to ask.</p>
         <div className='flex gap-3'>
           <FaWhatsapp className='text-2xl text-green-300'/>
           <BiLogoGmail className='text-2xl text-red-400'/>
@@ -23,7 +24,7 @@ const Footer = () => {
         <h1 className='text-2xl font-bold'>Quick Links</h1>
         <Link href="/">Home</Link>
         <Link href="/#skills">Skills</Link>
-        <Link href="/#experience">Experince</Link>
+        <Link href="/#experience">Experience</Link>
         <Link href="/projects">Projects</Link>
       </div>
       <div className='flex flex-col gap-2'>

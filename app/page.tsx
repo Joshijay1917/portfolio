@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight, FaCss3Alt, FaHtml5, FaNodeJs, FaReact, FaStar } from "react-icons/fa";
@@ -7,13 +8,20 @@ import { RiJavascriptFill } from "react-icons/ri";
 import { SiExpress, SiMongodb, SiNextdotjs } from "react-icons/si";
 import { TbBrandReactNative } from "react-icons/tb";
 
+
+export const metadata: Metadata = {
+  title: "Jay Joshi | Full Stack MERN Developer in Rajkot",
+  description: "Portfolio of Jay Joshi, a 2nd-year CS student at VVP Engineering College. Specializing in MERN stack, Next.js, and Privacy-First AI Agents. Based in Rajkot, Gujarat.",
+  keywords: ["Jay Joshi", "Full Stack Developer Rajkot", "VVP Engineering College", "MERN Stack Developer", "Privacy Agent AI"],
+};
+
 export default function Home() {
   return (
     <div className="bg-gray-200">
-      <div className='relative w-full h-[600px] text-white overflow-hidden'>
+      <div className='relative w-full h-[600px] bg-gray-200 text-white overflow-hidden'>
         <Image
           src="/me.jpg"
-          alt="Jay Joshi Background"
+          alt="Jay Joshi - Full Stack Developer and MERN Stack Expert"
           fill
           priority
           className="object-cover object-top"
@@ -46,7 +54,7 @@ export default function Home() {
       </div>
 
       <section id='skills' className='mt-10'>
-        <h1 className='text-4xl font-bold text-center'>Skills - Which Technologies I Know</h1>
+        <h2 className='text-4xl font-bold text-center'>Skills - Which Technologies I Know</h2>
         <div className='grid grid-cols-4 mx-30 p-10'>
           <div className='bg-white shadow-2xl m-3 rounded-2xl p-5'>
             <FaNodeJs className='text-green-400 text-4xl' />
@@ -116,36 +124,36 @@ export default function Home() {
 
       <section className='px-18 py-22'>
         <div className='flex px-16 justify-between'>
-          <h1 className='text-4xl font-bold'>Projects</h1>
+          <h2 className='text-4xl font-bold'>Projects</h2>
           <Link href={'/projects'} className='flex items-center gap-3 text-blue-600 text-2xl cursor-pointer'>Show all projects <FaArrowRight /></Link>
         </div>
         <div className='m-10 mr-40 grid grid-cols-4 gap-6'>
-          <Link href={'/projects/notes4all'} className='w-[450px] bg-white rounded-2xl overflow-clip shadow-2xl'>
-            <Image src="/notes4all.png" alt="Notes4All project" width={450} height={250} className="w-full object-cover" />
+          <Link aria-label="Notes4All - Full Stack Student Resource Portal by Jay Joshi" href={'/projects/notes4all'} className='w-[450px] bg-white rounded-2xl overflow-clip shadow-2xl'>
+            <Image src="/notes4all.png" alt="Notes4All - Full Stack Student Resource Portal by Jay Joshi" width={450} height={250} className="w-full object-cover" />
             <div className='flex flex-col gap-5 p-5'>
               <h2 className='font-medium text-3xl'>Notes4All</h2>
               <p>A complete full stack project to help students for notes, assignments and lab manuals.</p>
               <div className='flex text-blue-600 items-center gap-3'>View More <FaArrowRight /></div>
             </div>
           </Link>
-          <Link href={'/projects/payment'} className='w-[450px] bg-white rounded-2xl overflow-clip shadow-2xl'>
-            <Image src="/payment.png" alt="Smart AI Payment Tracker" width={450} height={250} className="w-full object-cover" />
+          <Link aria-label="Smart AI Payment Tracker by Jay Joshi" href={'/projects/payment'} className='w-[450px] bg-white rounded-2xl overflow-clip shadow-2xl'>
+            <Image src="/payment.png" alt="Smart AI Payment Tracker by Jay Joshi" width={450} height={250} className="w-full object-cover" />
             <div className='flex flex-col gap-5 p-5'>
               <h2 className='font-medium text-3xl'>Smart AI Payment Tracker</h2>
               <p>A complete full stack project to track customer payments with pridction of payment delay or not.</p>
               <div className='flex text-blue-600 items-center gap-3'>View More <FaArrowRight /></div>
             </div>
           </Link>
-          <Link href={'/projects/attendance'} className='w-[450px] bg-white rounded-2xl overflow-clip shadow-2xl'>
-            <Image src="/attendance.png" alt="Smart Attendance System" width={450} height={250} className="w-full object-cover" />
+          <Link aria-label="Smart Attendance System by Jay Joshi" href={'/projects/attendance'} className='w-[450px] bg-white rounded-2xl overflow-clip shadow-2xl'>
+            <Image src="/attendance.png" alt="Smart Attendance System by Jay Joshi" width={450} height={250} className="w-full object-cover" />
             <div className='flex flex-col gap-5 p-5'>
               <h2 className='font-medium text-3xl'>Smart Attendance System</h2>
               <p>A complete full stack project to take student attendance through QR Code.</p>
               <div className='flex text-blue-600 items-center gap-3'>View More <FaArrowRight /></div>
             </div>
           </Link>
-          <Link href={'/projects/privacyagent'} className='w-[450px] bg-white rounded-2xl overflow-clip shadow-2xl'>
-            <Image src="/privacyagent.png" alt="Privacy Agent AI Assistant" width={450} height={250} className="w-full object-cover" />
+          <Link aria-label="Privacy Agent AI Assistant by Jay Joshi" href={'/projects/privacyagent'} className='w-[450px] bg-white rounded-2xl overflow-clip shadow-2xl'>
+            <Image src="/privacyagent.png" alt="Privacy Agent AI Assistant by Jay Joshi" width={450} height={250} className="w-full object-cover" />
             <div className='flex flex-col gap-5 p-5'>
               <h2 className='font-medium text-3xl'>Privacy Agent</h2>
               <p>A complete full stack AI-Driven Mobile Assistant with On-Device Memory.</p>
@@ -156,7 +164,7 @@ export default function Home() {
       </section>
 
       <section className='px-30 pb-20 relative'>
-        <h1 className='text-4xl font-bold text-center'>Education</h1>
+        <h2 className='text-4xl font-bold text-center'>Education</h2>
         <div className='bg-white'>
           <hr className='absolute rotate-90 top-14 left-0 w-[20%] py-50' />
           <div className='absolute top-30 left-82 bg-blue-400 w-[3%] h-[8%] rounded-full'></div>
@@ -167,7 +175,7 @@ export default function Home() {
             <FaStar className='bg-yellow-400/20 text-yellow-400 p-2 rounded-full text-4xl' />
             <div>
               <p className='text-blue-400 text-xl font-medium'>2022-2024</p>
-              <h1 className='text-2xl font-medium'>Higher School</h1>
+              <h3 className='text-2xl font-medium'>Higher School</h3>
             </div>
           </div>
           <p>I completed my Higher Secondary Education at Patanjali School, Rajkot, where I secured <strong>85%</strong> in 11th and <strong>92.49%</strong> in 12th (Gujarat Board). I also qualified JEE with an <strong>89 percentile</strong>.</p>
@@ -177,7 +185,7 @@ export default function Home() {
             <FaStar className='bg-green-400/20 text-green-400 p-2 rounded-full text-4xl' />
             <div>
               <p className='text-blue-400 text-xl font-medium'>2024-2028</p>
-              <h1 className='text-2xl font-medium'>Bachelor's Degree</h1>
+              <h3 className='text-2xl font-medium'>Bachelor's Degree</h3>
             </div>
           </div>
           <p>I am currently pursuing my Bachelor's degree in Computer Science at V.V.P. Engineering College, Rajkot. I have maintained a <strong>9.13 CPI</strong> in my first year.</p>
@@ -185,7 +193,7 @@ export default function Home() {
       </section>
 
       <section id='experience' className='p-14'>
-        <h1 className='text-4xl font-bold text-center'>Experience</h1>
+        <h2 className='text-4xl font-bold text-center'>Experience</h2>
         <div className='grid grid-cols-3 w-full mx-auto m-10 gap-5'>
           <div className='rounded-2xl overflow-clip bg-white shadow-2xl'>
             <div className='relative'>
@@ -193,19 +201,19 @@ export default function Home() {
               <IoBookmark className='text-yellow-400 text-5xl absolute bottom-[-20px] right-5' />
             </div>
             <div className='p-5'>
-              <h1 className='text-2xl font-medium py-5'>Gardi Vidhyapith Hackathon</h1>
+              <h3 className='text-2xl font-medium py-5'>Gardi Vidhyapith Hackathon</h3>
               <p>This is a 24 Hour Hackathon organized in my city. My team is tasked to create a Customer Relationship Management System. I am work as a backend developer. I created routes using NodeJS and store and manage data in mongodb.</p>
             </div>
           </div>
           <div className='rounded-2xl overflow-clip bg-white shadow-2xl'>
             <div className='relative'>
-              <Image src="/white-fox.jpg" alt="MERN Intern" width={600} height={300} className="w-full object-cover h-[320px]" />
+              <Image src="/white-fox.jpg" alt="Jay Joshi MERN Stack Internship at White Label Fox Rajkot" width={600} height={300} className="w-full object-cover h-[320px]" />
               <IoBookmark className='text-yellow-400 text-5xl absolute bottom-[-20px] right-5' />
             </div>
             <div className='p-5'>
-              <h1 className='text-2xl font-medium py-5'>MERN Intern at White Label Fox Pvt. Ltd.</h1>
+              <h3 className='text-2xl font-medium py-5'>MERN Intern at White Label Fox Pvt. Ltd. Rajkot</h3>
               <h3>January 2026 - March 2026</h3>
-              <p>I am worked as a MERN Intern at White Label Fox Pvt. Ltd. Through this internship i am learn about real world poduct development.in this internship i work on NodeJs, ExpressJs, NestJs, NextJs, MongoDB and PostgresSQL.</p>
+              <p>I am worked as a MERN Intern at White Label Fox Pvt. Ltd. Rajkot. Through this internship i am learn about real world poduct development.in this internship i work on NodeJs, ExpressJs, NestJs, NextJs, MongoDB and PostgresSQL.</p>
             </div>
           </div>
           <div className='rounded-2xl overflow-clip bg-white shadow-2xl'>
@@ -214,7 +222,7 @@ export default function Home() {
               <IoBookmark className='text-yellow-400 text-5xl absolute bottom-[-20px] right-5' />
             </div>
             <div className='p-5'>
-              <h1 className='text-2xl font-medium py-5'>Code Carnival Hackathon</h1>
+              <h3 className='text-2xl font-medium py-5'>Code Carnival Hackathon</h3>
               <p>This is a 36 hours hackathon organized in atmity university Rajkot. Our team is tasked to create a smart AI payment tracker for SMEs. I am work as a backend developer and trained a machine learning model using TensorflowJS.</p>
             </div>
           </div>

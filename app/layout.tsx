@@ -16,9 +16,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Joshi Jay - Portfolio",
-  description: "This is portfolio of my details",
-};
+  title: 'Jay Joshi | Full Stack Developer & MERN Expert',
+  description: 'Portfolio of Jay Joshi, a Full Stack Developer in Rajkot specializing in MERN Stack, Next.js, and AI Agents. 2nd Year Computer Science student at VVP Engineering College.',
+  keywords: ['Jay Joshi', 'Full Stack Developer Rajkot', 'MERN Stack Developer', 'VVP Engineering College', 'Next.js Developer Gujarat'],
+  openGraph: {
+    title: 'Jay Joshi | Full Stack Developer',
+    description: 'Building modern, privacy-first web applications and AI agents.',
+    images: ['/og-image.png'],
+  },
+}
 
 export default function RootLayout({
   children,
@@ -27,11 +33,33 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Jay Joshi",
+              "jobTitle": "Full Stack Developer",
+              "url": "https://portfolio-jay-tau.vercel.app",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Rajkot",
+                "addressRegion": "Gujarat",
+                "addressCountry": "India"
+              },
+              "alumniOf": "VVP Engineering College",
+              "knowsAbout": ["MERN Stack", "Next.js", "TypeScript", "AI Agents", "Python", "React"]
+            })
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
-        <Toaster position="bottom-right"/>
+        <Toaster position="bottom-right" />
         {children}
         <Footer />
       </body>

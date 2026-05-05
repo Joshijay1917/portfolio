@@ -1,134 +1,180 @@
+import SwipeCardStack from "@/components/Projects";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { FaArrowRight, FaCss3Alt, FaHtml5, FaNodeJs, FaReact, FaStar } from "react-icons/fa";
+import {
+  FaArrowRight,
+  FaCss3Alt,
+  FaHtml5,
+  FaNodeJs,
+  FaReact,
+  FaStar,
+  FaGraduationCap,
+  FaBriefcase
+} from "react-icons/fa";
 import { GrMysql } from "react-icons/gr";
-import { IoBookmark } from "react-icons/io5";
+import { IoBookmark, IoShieldCheckmark } from "react-icons/io5";
 import { RiJavascriptFill } from "react-icons/ri";
 import { SiExpress, SiMongodb, SiNextdotjs } from "react-icons/si";
 import { TbBrandReactNative } from "react-icons/tb";
 
-
 export const metadata: Metadata = {
   title: "Jay Joshi | Full Stack MERN Developer in Rajkot",
-  description: "Portfolio of Jay Joshi, a 2nd-year CS student at VVP Engineering College. Specializing in MERN stack, Next.js, and Privacy-First AI Agents. Based in Rajkot, Gujarat.",
-  keywords: ["Jay Joshi", "Full Stack Developer Rajkot", "VVP Engineering College", "MERN Stack Developer", "Privacy Agent AI"],
+  description: "Portfolio of Jay Joshi, a 4th-semester CS student at VVP Engineering College. Specializing in MERN stack, Next.js, and Privacy-First AI Agents. Based in Rajkot, Gujarat.",
+  keywords: [
+    "Jay Joshi",
+    "Full Stack Developer Rajkot",
+    "VVP Engineering College",
+    "MERN Stack Developer",
+    "Privacy Agent AI"
+  ],
 };
+
+const skills = [
+  { name: "Node.js", icon: FaNodeJs, color: "text-green-500", desc: "Scalable server-side JS runtimes and RESTful APIs." },
+  { name: "React.js", icon: FaReact, color: "text-blue-500", desc: "Dynamic component-driven user interface architectures." },
+  { name: "Express.js", icon: SiExpress, color: "text-gray-700", desc: "Fast, unopinionated framework for web applications." },
+  { name: "MongoDB", icon: SiMongodb, color: "text-green-600", desc: "Non-relational database design and document modeling." },
+  { name: "React Native", icon: TbBrandReactNative, color: "text-sky-500", desc: "Cross-platform native mobile application development." },
+  { name: "Next.js", icon: SiNextdotjs, color: "text-slate-900", desc: "Full-stack production frameworks with edge rendering." },
+  { name: "JavaScript", icon: RiJavascriptFill, color: "text-yellow-500", desc: "Modern dynamic and asynchronous web scripting." },
+  { name: "HTML5", icon: FaHtml5, color: "text-orange-500", desc: "Semantic structural foundations for the web." },
+  { name: "CSS3", icon: FaCss3Alt, color: "text-blue-600", desc: "Modern styling, flexbox, grid, and animations." },
+  { name: "MySQL", icon: GrMysql, color: "text-blue-400", desc: "Relational databases and relational schema optimization." },
+];
+
+const projects = [
+  {
+    title: "Notes4All",
+    desc: "A complete full-stack student resource portal to help students manage notes, assignments, and lab manuals.",
+    href: "/projects/notes4all",
+    image: "/notes4all.png",
+  },
+  {
+    title: "Smart AI Payment Tracker",
+    desc: "A full-stack AI tool to track customer payments with predictive analysis for payment delays.",
+    href: "/projects/payment",
+    image: "/payment.png",
+  },
+  {
+    title: "Smart Attendance System",
+    desc: "A complete full-stack project to take student attendance through highly secure QR Code scanning.",
+    href: "/projects/attendance",
+    image: "/attendance.png",
+  },
+  {
+    title: "Privacy Agent",
+    desc: "A full-stack AI-Driven Mobile Assistant built with a privacy-first, on-device local memory architecture.",
+    href: "/projects/privacyagent",
+    image: "/privacyagent.png",
+  },
+];
+
+const experiences = [
+  {
+    company: "White Label Fox Pvt. Ltd.",
+    role: "MERN Intern",
+    period: "Jan 2026 - Mar 2026",
+    desc: "Learned real-world product development with hands-on experience using Node.js, Express, Nest.js, and Next.js.",
+    image: "/white-fox.jpg",
+    icon: FaBriefcase,
+  },
+  {
+    company: "Gardi Vidhyapith Hackathon",
+    role: "Backend Developer",
+    period: "24-Hour Event",
+    desc: "Created robust API routes, managed database operations, and built database schemas in a collaborative, fast-paced setting.",
+    image: "/h2.jpg",
+    icon: IoShieldCheckmark,
+  },
+  {
+    company: "Code Carnival Hackathon",
+    role: "AI / Backend Developer",
+    period: "36-Hour Event",
+    desc: "Designed the architecture and trained a predictive model using TensorFlow.js for in-browser predictions.",
+    image: "/h1.png",
+    icon: FaStar,
+  },
+];
 
 export default function Home() {
   return (
-    <div className="bg-gray-200">
-      <div className='relative w-full h-[600px] bg-gray-200 text-white overflow-hidden'>
+    <div className="bg-slate-50 min-h-screen text-slate-800 font-sans selection:bg-blue-100">
+      {/* Hero Section */}
+      <div className="relative w-full h-[360px] md:h-[500px] bg-slate-900 md:bg-slate-900/60 text-white overflow-hidden">
         <Image
           src="/me.jpg"
           alt="Jay Joshi - Full Stack Developer and MERN Stack Expert"
           fill
           priority
-          className="object-cover object-top"
+          className="object-cover object-center md:object-top mix-blend-overlay"
         />
-        <div className='flex justify-end items-center p-20 h-full relative z-10'>
-          <div className='flex flex-col gap-2'>
-            <h1 className='text-6xl font-extrabold'>Jay Joshi</h1>
-            <p className='text-4xl font-bold'>Enthusiastic</p>
-            <p className='text-4xl font-bold'>Full Stack Developer</p>
-            <div className='flex text-2xl gap-10 mt-5 font-medium text-white'>
-              <div className='flex flex-col items-center'>
-                <FaNodeJs className='text-green-400 text-7xl' />
-                <p>Node JS</p>
-              </div>
-              <div className='flex flex-col items-center'>
-                <SiExpress className='text-gray-800 text-7xl' />
-                <p>Express JS</p>
-              </div>
-              <div className='flex flex-col items-center'>
-                <SiMongodb className='text-green-400 text-7xl' />
-                <p>MongoDB</p>
-              </div>
-              <div className='flex flex-col items-center'>
-                <GrMysql className='text-blue-300 text-7xl' />
-                <p>MySQL</p>
-              </div>
-            </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent" />
+
+        <div className="max-w-7xl mx-auto flex flex-col justify-end md:items-end h-full px-6 md:px-12 pb-12 md:pb-16 relative z-10">
+          <div className="flex flex-col md:items-end gap-2 max-w-3xl">
+            <span className="text-blue-400 font-semibold text-sm md:text-base tracking-widest uppercase">
+              Full Stack Developer
+            </span>
+            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">
+              Jay Joshi
+            </h1>
+            <p className="text-lg md:text-end md:text-2xl text-slate-300 font-medium max-w-2xl mt-1">
+              Building practical, real-world utility tools and privacy-first web solutions that solve actual business challenges.
+            </p>
           </div>
         </div>
       </div>
 
-      <section id='skills' className='mt-10'>
-        <h2 className='text-4xl font-bold text-center'>Skills - Which Technologies I Know</h2>
-        <div className='grid grid-cols-4 mx-30 p-10'>
-          <div className='bg-white shadow-2xl m-3 rounded-2xl p-5'>
-            <FaNodeJs className='text-green-400 text-4xl' />
-            <h2 className='text-2xl font-medium'>Node JS</h2>
-            <p>NodeJS a Javascript framework to run javascript outside the browser.</p>
-          </div>
-          <div className='bg-white shadow-2xl m-3 rounded-2xl p-5'>
-            <FaReact className='text-blue-400 text-4xl' />
-            <h2 className='text-2xl font-medium'>React JS</h2>
-            <p>React.js is a free and open-source Javascript library for building User Interfaces.</p>
-          </div>
-          <div className='bg-white shadow-2xl m-3 rounded-2xl p-5'>
-            <SiExpress className='text-gray-600 text-4xl' />
-            <h2 className='text-2xl font-medium'>Express JS</h2>
-            <p>Express JS a Node JS framework which provides robust features for web applications and APIs.</p>
-          </div>
-          <div className='bg-white shadow-2xl m-3 rounded-2xl p-5'>
-            <SiMongodb className='text-green-400 text-4xl' />
-            <h2 className='text-2xl font-medium'>MongoDB</h2>
-            <p>MongoDB is a non-relational database to store data in document form.</p>
-          </div>
-          <div className='bg-white shadow-2xl m-3 rounded-2xl p-5'>
-            <FaHtml5 className='text-orange-400 text-4xl' />
-            <h2 className='text-2xl font-medium'>HTML</h2>
-            <p>HTML is a skeleton of any website. it is a basic structure of web application.</p>
-          </div>
-          <div className='bg-white shadow-2xl m-3 rounded-2xl p-5'>
-            <FaCss3Alt className='text-blue-400 text-4xl' />
-            <h2 className='text-2xl font-medium'>CSS</h2>
-            <p>Css is style sheet language used for describing the presentation of document.</p>
-          </div>
-          <div className='bg-white shadow-2xl m-3 rounded-2xl p-5'>
-            <RiJavascriptFill className='text-yellow-400 text-4xl' />
-            <h2 className='text-2xl font-medium'>Javascript</h2>
-            <p>Javascript enables dynamic and interactive content in web pages.</p>
-          </div>
-          <div className='bg-white shadow-2xl m-3 rounded-2xl p-5'>
-            <GrMysql className='text-blue-400 text-4xl' />
-            <h2 className='text-2xl font-medium'>MySQL</h2>
-            <p>MySQL is a relational database management system in which we can store and retrieve data efficiently.</p>
-          </div>
-          <div className='bg-white shadow-2xl m-3 rounded-2xl p-5'>
-            <TbBrandReactNative className='text-blue-400 text-4xl' />
-            <h2 className='text-2xl font-medium'>React Native</h2>
-            <p>React Native is an open-source UI software framework to build native mobile applications for iOS and Android using JavaScript and React.</p>
-          </div>
-          <div className='bg-white shadow-2xl m-3 rounded-2xl p-5'>
-            <SiNextdotjs className='text-black text-4xl' />
-            <h2 className='text-2xl font-medium'>Next JS</h2>
-            <p>Next.js is an open-source React framework for building fast, full-stack web applications.</p>
-          </div>
+      {/* Skills Section */}
+      <section id="skills" className="py-20 px-6 md:px-12 max-w-7xl mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-3">
+            Technologies I Know
+          </h2>
+          <p className="text-slate-500 text-base md:text-lg">
+            A versatile set of full-stack and front-to-back development technologies I utilize to build modern, scalable apps.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+          {skills.map((skill, index) => {
+            const IconComponent = skill.icon;
+            return (
+              <div
+                key={index}
+                className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between h-full hover:-translate-y-1 group"
+              >
+                <div>
+                  <IconComponent className={`${skill.color} text-4xl mb-4 group-hover:scale-110 transition-transform`} />
+                  <h3 className="text-xl font-semibold text-slate-900 mb-2">
+                    {skill.name}
+                  </h3>
+                  <p className="text-slate-500 text-sm leading-relaxed">
+                    {skill.desc}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
 
-      {/* <section id='currentLearnings' className='mt-10 px-30 flex flex-col gap-5'>
-        <h1 className='text-4xl font-bold'>Current Learnings</h1>
-        <div className="w-full flex bg-white gap-4 overflow-clip rounded-2xl shadow-2xl">
-          <img width={600} src="CurrLea.png" alt="" />
-          <div className="flex flex-col gap-3 p-5">
-            <h1 className="font-bold text-xl">React Native - Privacy First AI Chatbot</h1>
-            <p>I am leaning about AI Agents. i am think to build a chatbot but i want to fix a problem of other chatbot. So i find a problem that every chatbot calls backend and then use databse to save memory. this is privacy issue user's personal chat's are stored on cloud. So i think to store memory locally in device for privacy of user.</p>
-            <p>Currently Working in notification feature. AI Agent Can schedule notifications</p>
-            <p>Visit now: <a className="text-blue-400" href="https://privacy-agent-app-download.vercel.app">https://privacy-agent-app-download.vercel.app</a></p>
-          </div>
+      {/* Projects Section */}
+      <section className='px-6 md:px-18 py-22'>
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
+            Projects
+          </h2>
+          <Link
+            href={"/projects"}
+            className="flex items-center gap-3 text-blue-600 text-lg md:text-xl font-medium cursor-pointer hover:text-blue-700 transition-colors group"
+          >
+            Show all projects <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
+          </Link>
         </div>
-      </section> */}
-
-      <section className='px-18 py-22'>
-        <div className='flex px-16 justify-between'>
-          <h2 className='text-4xl font-bold'>Projects</h2>
-          <Link href={'/projects'} className='flex items-center gap-3 text-blue-600 text-2xl cursor-pointer'>Show all projects <FaArrowRight /></Link>
-        </div>
-        <div className='m-10 mr-40 grid grid-cols-4 gap-6'>
-          <Link aria-label="Notes4All - Full Stack Student Resource Portal by Jay Joshi" href={'/projects/notes4all'} className='w-[450px] bg-white rounded-2xl overflow-clip shadow-2xl'>
+        <div className='hidden md:flex md:anim-contain md:m-10 md:mr-40 md:grid grid-cols-4 md:gap-6'>
+          <Link aria-label="Notes4All - Full Stack Student Resource Portal by Jay Joshi" href={'/projects/notes4all'} className='w-[450px] card-1 bg-white rounded-2xl overflow-clip shadow-2xl'>
             <Image src="/notes4all.png" alt="Notes4All - Full Stack Student Resource Portal by Jay Joshi" width={450} height={250} className="w-full object-cover" />
             <div className='flex flex-col gap-5 p-5'>
               <h2 className='font-medium text-3xl'>Notes4All</h2>
@@ -136,7 +182,7 @@ export default function Home() {
               <div className='flex text-blue-600 items-center gap-3'>View More <FaArrowRight /></div>
             </div>
           </Link>
-          <Link aria-label="Smart AI Payment Tracker by Jay Joshi" href={'/projects/payment'} className='w-[450px] bg-white rounded-2xl overflow-clip shadow-2xl'>
+          <Link aria-label="Smart AI Payment Tracker by Jay Joshi" href={'/projects/payment'} className='w-[450px] card-2 bg-white rounded-2xl overflow-clip shadow-2xl'>
             <Image src="/payment.png" alt="Smart AI Payment Tracker by Jay Joshi" width={450} height={250} className="w-full object-cover" />
             <div className='flex flex-col gap-5 p-5'>
               <h2 className='font-medium text-3xl'>Smart AI Payment Tracker</h2>
@@ -144,7 +190,7 @@ export default function Home() {
               <div className='flex text-blue-600 items-center gap-3'>View More <FaArrowRight /></div>
             </div>
           </Link>
-          <Link aria-label="Smart Attendance System by Jay Joshi" href={'/projects/attendance'} className='w-[450px] bg-white rounded-2xl overflow-clip shadow-2xl'>
+          <Link aria-label="Smart Attendance System by Jay Joshi" href={'/projects/attendance'} className='w-[450px] card-3 bg-white rounded-2xl overflow-clip shadow-2xl'>
             <Image src="/attendance.png" alt="Smart Attendance System by Jay Joshi" width={450} height={250} className="w-full object-cover" />
             <div className='flex flex-col gap-5 p-5'>
               <h2 className='font-medium text-3xl'>Smart Attendance System</h2>
@@ -152,7 +198,7 @@ export default function Home() {
               <div className='flex text-blue-600 items-center gap-3'>View More <FaArrowRight /></div>
             </div>
           </Link>
-          <Link aria-label="Privacy Agent AI Assistant by Jay Joshi" href={'/projects/privacyagent'} className='w-[450px] bg-white rounded-2xl overflow-clip shadow-2xl'>
+          <Link aria-label="Privacy Agent AI Assistant by Jay Joshi" href={'/projects/privacyagent'} className='w-[450px] card-4 bg-white rounded-2xl overflow-clip shadow-2xl'>
             <Image src="/privacyagent.png" alt="Privacy Agent AI Assistant by Jay Joshi" width={450} height={250} className="w-full object-cover" />
             <div className='flex flex-col gap-5 p-5'>
               <h2 className='font-medium text-3xl'>Privacy Agent</h2>
@@ -161,71 +207,93 @@ export default function Home() {
             </div>
           </Link>
         </div>
+        <SwipeCardStack />
       </section>
 
-      <section className='px-30 pb-20 relative'>
-        <h2 className='text-4xl font-bold text-center'>Education</h2>
-        <div className='bg-white'>
-          <hr className='absolute rotate-90 top-14 left-0 w-[20%] py-50' />
-          <div className='absolute top-30 left-82 bg-blue-400 w-[3%] h-[8%] rounded-full'></div>
-          <div className='absolute top-88 left-82 bg-blue-400 w-[3%] h-[8%] rounded-full'></div>
-        </div>
-        <div className='bg-white p-7 mt-10 w-1/2 mx-auto shadow-2xl rounded-2xl'>
-          <div className='flex gap-3 items-center pb-3'>
-            <FaStar className='bg-yellow-400/20 text-yellow-400 p-2 rounded-full text-4xl' />
-            <div>
-              <p className='text-blue-400 text-xl font-medium'>2022-2024</p>
-              <h3 className='text-2xl font-medium'>Higher School</h3>
-            </div>
-          </div>
-          <p>I completed my Higher Secondary Education at Patanjali School, Rajkot, where I secured <strong>85%</strong> in 11th and <strong>92.49%</strong> in 12th (Gujarat Board). I also qualified JEE with an <strong>89 percentile</strong>.</p>
-        </div>
-        <div className='bg-white p-7 mt-10 w-1/2 mx-auto shadow-2xl rounded-2xl'>
-          <div className='flex gap-3 items-center pb-3'>
-            <FaStar className='bg-green-400/20 text-green-400 p-2 rounded-full text-4xl' />
-            <div>
-              <p className='text-blue-400 text-xl font-medium'>2024-2028</p>
-              <h3 className='text-2xl font-medium'>Bachelor's Degree</h3>
-            </div>
-          </div>
-          <p>I am currently pursuing my Bachelor's degree in Computer Science at V.V.P. Engineering College, Rajkot. I have maintained a <strong>9.13 CPI</strong> in my first year.</p>
-        </div>
-      </section>
+      {/* Education & Experience Section */}
+      <section id="experience" className="py-20 px-6 md:px-12 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
-      <section id='experience' className='p-14'>
-        <h2 className='text-4xl font-bold text-center'>Experience</h2>
-        <div className='grid grid-cols-3 w-full mx-auto m-10 gap-5'>
-          <div className='rounded-2xl overflow-clip bg-white shadow-2xl'>
-            <div className='relative'>
-              <Image src="/h2.jpg" alt="Gardi Vidhyapith Hackathon" width={600} height={300} className="w-full object-cover" />
-              <IoBookmark className='text-yellow-400 text-5xl absolute bottom-[-20px] right-5' />
-            </div>
-            <div className='p-5'>
-              <h3 className='text-2xl font-medium py-5'>Gardi Vidhyapith Hackathon</h3>
-              <p>This is a 24 Hour Hackathon organized in my city. My team is tasked to create a Customer Relationship Management System. I am work as a backend developer. I created routes using NodeJS and store and manage data in mongodb.</p>
+          {/* Education Block */}
+          <div>
+            <h2 className="text-3xl font-bold text-slate-900 mb-10 flex items-center gap-3">
+              <FaGraduationCap className="text-blue-600" /> Education
+            </h2>
+
+            <div className="relative border-l border-slate-200 ml-3 pl-8 flex flex-col gap-10">
+              {/* College Card */}
+              <div className="relative">
+                <span className="absolute -left-[41px] flex items-center justify-center w-5 h-5 bg-blue-600 rounded-full ring-4 ring-white" />
+                <div className="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm">
+                  <span className="text-sm font-semibold text-blue-600 tracking-wide">
+                    2024 - 2028
+                  </span>
+                  <h3 className="text-xl font-bold text-slate-900 mt-1 mb-2">
+                    Bachelor's in Computer Science
+                  </h3>
+                  <p className="text-slate-700 text-sm leading-relaxed">
+                    Currently pursuing a Bachelor's degree at <strong>V.V.P. Engineering College</strong>, Rajkot. Maintained a 9.13 CPI in the first year.
+                  </p>
+                </div>
+              </div>
+
+              {/* Higher Secondary Card */}
+              <div className="relative">
+                <span className="absolute -left-[41px] flex items-center justify-center w-5 h-5 bg-slate-400 rounded-full ring-4 ring-white" />
+                <div className="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm">
+                  <span className="text-sm font-semibold text-slate-500 tracking-wide">
+                    2022 - 2024
+                  </span>
+                  <h3 className="text-xl font-bold text-slate-900 mt-1 mb-2">
+                    Higher Secondary Education
+                  </h3>
+                  <p className="text-slate-700 text-sm leading-relaxed">
+                    Completed education at Patanjali School, Rajkot. Secured <strong>92.49%</strong> in 12th Board and qualified JEE with an <strong>89 percentile</strong>.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
-          <div className='rounded-2xl overflow-clip bg-white shadow-2xl'>
-            <div className='relative'>
-              <Image src="/white-fox.jpg" alt="Jay Joshi MERN Stack Internship at White Label Fox Rajkot" width={600} height={300} className="w-full object-cover h-[320px]" />
-              <IoBookmark className='text-yellow-400 text-5xl absolute bottom-[-20px] right-5' />
-            </div>
-            <div className='p-5'>
-              <h3 className='text-2xl font-medium py-5'>MERN Intern at White Label Fox Pvt. Ltd. Rajkot</h3>
-              <h3>January 2026 - March 2026</h3>
-              <p>I am worked as a MERN Intern at White Label Fox Pvt. Ltd. Rajkot. Through this internship i am learn about real world poduct development.in this internship i work on NodeJs, ExpressJs, NestJs, NextJs, MongoDB and PostgresSQL.</p>
+
+          {/* Experience Block */}
+          <div>
+            <h2 className="text-3xl font-bold text-slate-900 mb-10 flex items-center gap-3">
+              <FaBriefcase className="text-blue-600" /> Experience & Roles
+            </h2>
+
+            <div className="flex flex-col gap-6">
+              {experiences.map((exp, index) => {
+                const Icon = exp.icon;
+                return (
+                  <div
+                    key={index}
+                    className="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex items-start gap-5"
+                  >
+                    <div className="p-3 rounded-xl bg-slate-50 text-blue-600 text-2xl shrink-0">
+                      <Icon />
+                    </div>
+                    <div>
+                      <div className="flex justify-between items-baseline gap-4 flex-wrap">
+                        <h3 className="text-lg font-bold text-slate-900">
+                          {exp.company}
+                        </h3>
+                        <span className="text-xs font-medium text-slate-500 bg-slate-100 px-3 py-1 rounded-full">
+                          {exp.period}
+                        </span>
+                      </div>
+                      <span className="block text-sm font-semibold text-blue-600 mt-0.5 mb-3">
+                        {exp.role}
+                      </span>
+                      <p className="text-slate-600 text-sm leading-relaxed">
+                        {exp.desc}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
-          <div className='rounded-2xl overflow-clip bg-white shadow-2xl'>
-            <div className='relative'>
-              <Image src="/h1.png" alt="Code Carnival Hackathon" width={600} height={300} className="w-full object-cover" />
-              <IoBookmark className='text-yellow-400 text-5xl absolute bottom-[-20px] right-5' />
-            </div>
-            <div className='p-5'>
-              <h3 className='text-2xl font-medium py-5'>Code Carnival Hackathon</h3>
-              <p>This is a 36 hours hackathon organized in atmity university Rajkot. Our team is tasked to create a smart AI payment tracker for SMEs. I am work as a backend developer and trained a machine learning model using TensorflowJS.</p>
-            </div>
-          </div>
+
         </div>
       </section>
     </div>

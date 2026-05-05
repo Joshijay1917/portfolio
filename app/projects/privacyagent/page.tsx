@@ -1,74 +1,131 @@
-import React from 'react'
-import Image from 'next/image'
-import { FaExternalLinkAlt } from 'react-icons/fa'
+import Image from 'next/image';
+import { FaExternalLinkAlt } from 'react-icons/fa';
 
-function privacyagent() {
+const PrivacyAgent = () => {
     return (
-        <div className='bg-gray-200 pb-10'>
-            <div className='relative h-[300px] w-full flex items-center justify-center overflow-hidden'>
+        <div className='bg-slate-50 min-h-screen pb-20 text-slate-800'>
+            {/* Hero Section */}
+            <div className='relative h-[350px] md:h-[450px] w-full flex items-center justify-center overflow-hidden'>
                 <Image
                     src="/aibg.png"
                     alt="Privacy Agent Background"
                     fill
                     priority
-                    className="object-cover object-center"
+                    className="object-cover object-center brightness-50"
                 />
-                <div className='flex justify-around gap-80 items-center mr-40 relative z-10'>
-                    <h1 className='text-5xl text-white font-bold'>Privacy Agent</h1>
-                    <Image src="/privacylogo.png" alt="Privacy Logo" width={136} height={136} className='rounded-3xl' />
-                </div>
-            </div>
-
-            <div className='p-10 flex items-center gap-3 pt-20 rounded-2xl px-50'>
-                <div>
-                    <h2 className='text-3xl font-medium my-4'>Overview</h2>
-                    <p>This is a full stack <strong>AI-Driven Mobile Assistant with On-Device Memory.</strong>I am see many chatbots are save user data on cloud. So i think that whatever user chat with LLM is saved on cloud if any attack happens on cloud than they can see user's private information which is not good. So i developed this chatbot which stores user's chat and AI memory locally on user's device.</p>
-                    <div className='flex gap-3 m-14'>
-                        <p>See Project:</p>
-                        <a className='text-blue-500 flex items-center gap-3' href="https://privacy-agent-app-download.vercel.app">https://privacy-agent-app-download.vercel.app <FaExternalLinkAlt /></a>
-                    </div>
-                </div>
-                <div className="md:w-1/2 flex justify-center relative ml-30">
-                    <div className="relative w-68 h-[590px] bg-slate-900 rounded-[3rem] border-8 border-slate-800 shadow-2xl overflow-hidden">
-                        {/* Inner Screen Mockup */}
+                <div className='flex flex-col md:flex-row justify-between items-center gap-6 md:gap-40 relative z-10 px-6'>
+                    <h1 className='text-3xl md:text-5xl text-white font-extrabold tracking-tight text-center md:text-left'>
+                        Privacy Agent
+                    </h1>
+                    <div className='relative w-24 h-24 md:w-32 md:h-32 rounded-3xl overflow-hidden shadow-xl border-2 border-white/20'>
                         <Image
-                            src="/homepage.png"
-                            alt="Privacy Agent App Mockup"
+                            src="/privacylogo.png"
+                            alt="Privacy Logo"
                             fill
-                            className="object-cover object-bottom"
+                            className='object-cover'
                         />
                     </div>
-                    {/* Decorative Glow */}
-                    <div className="absolute -z-10 w-72 h-72 bg-blue-400/20 blur-[100px] rounded-full"></div>
                 </div>
             </div>
 
-            <div className='relative flex flex-col rounded-2xl z-10 overflow-clip mt-10 shadow-2xl mx-50 bg-white'>
-                <Image className='w-full rounded-2xl shadow-2xl' width={1200} height={600} src="/privacyworkflow.png" alt="Privacy Workflow" />
-                <div className='p-10'>
-                    <h2 className='text-2xl font-medium text-center'>Workflow</h2>
-                    <p>This is complete workflow i used to build this application. in this workflow we used <strong>React-native</strong> for user interface and <strong>NodeJS/Express</strong> as backend to call <strong>Google Gemini API</strong>. I used <strong>SQLite</strong> to store data locally on device. I also added a usefull feature <strong>Automatice Notification Schedule</strong>. We can ask AI to remind me to do this task at this time so i can provide notification on your phone at that time to notify you. in this app i create <strong>Session Based Chats.</strong> We can create different different sessions.</p>
-                </div>
-            </div>
+            <div className='max-w-7xl mx-auto px-6 md:px-12 py-16 flex flex-col gap-24'>
 
-            <div className='p-10 mt-10 flex gap-5 rounded-2xl px-50'>
-                <div className='w-1/2'>
-                    <h2 className='text-3xl font-medium my-4'>Problem & Solution</h2>
-                    <h2 className='font-medium py-2'>Problems:</h2>
-                    <ul className='list-disc pl-6'>
-                        <li>Most AI assistants rely on <strong>cloud-based processing</strong>, which requires uploading sensitive personal data and chat history to external servers.</li>
-                        <li>This creates a high risk of <strong>data leakage and privacy breaches</strong>, as users have little control over how their personal information is stored or used once it leaves their device.</li>
-                    </ul>
-                    <h2 className='font-medium py-2'>Solution:</h2>
-                    <ul className='list-disc pl-6'>
-                        <li><strong>Privacy Agent</strong> provides a 100% <strong>local-first memory system</strong> using SQLite, ensuring all chat history and personal reminders remain strictly on-device.</li>
-                        <li>By integrating <strong>Google Gemini 2.5 Flash-Lite</strong> and <strong>Gemma 3 27B</strong> via a robust Node.js backend, the app delivers high-speed, complex AI reasoning without compromising user privacy.</li>
-                    </ul>
+                {/* Overview Section */}
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-12 items-center'>
+                    <div className='flex flex-col gap-6'>
+                        <h2 className='text-3xl md:text-4xl font-bold text-slate-900'>Overview</h2>
+                        <p className='text-slate-600 text-sm md:text-base leading-relaxed'>
+                            This is a full-stack <strong>AI-Driven Mobile Assistant with On-Device Memory</strong>. I noticed that many chatbots save user data on the cloud. If an attack happens on the cloud, sensitive personal information can be exposed. To solve this, I developed this chatbot which stores the user's chat and AI memory locally on the device for complete privacy.
+                        </p>
+
+                        <div className='flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-2 p-5 bg-white border border-slate-100 rounded-xl shadow-sm'>
+                            <span className='font-semibold text-slate-900'>See Project:</span>
+                            <a
+                                className='text-blue-600 font-medium flex items-center gap-3 hover:underline break-all text-sm md:text-base'
+                                href="https://privacy-agent-app-download.vercel.app"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://privacy-agent-app-download.vercel.app <FaExternalLinkAlt className="text-xs" />
+                            </a>
+                        </div>
+                    </div>
+
+                    <div className="flex justify-center md:justify-end relative">
+                        <div className="relative w-72 h-[560px] bg-slate-900 rounded-[2.5rem] border-8 border-slate-800 shadow-2xl overflow-hidden">
+                            <Image
+                                src="/homepage.png"
+                                alt="Privacy Agent App Mockup"
+                                fill
+                                className="object-cover object-bottom"
+                            />
+                        </div>
+                        <div className="absolute -z-10 w-72 h-72 bg-blue-400/20 blur-[100px] rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+                    </div>
                 </div>
-                <Image className='rounded-2xl ml-30 shadow-2xl' width={500} height={300} src="/pands.png" alt="Privacy Agent Problem and Solution" />
+
+                {/* Workflow Section */}
+                <div className='bg-white border border-slate-100 rounded-2xl shadow-sm overflow-hidden'>
+                    <div className='relative w-full h-[250px] md:h-[400px] bg-slate-100'>
+                        <Image
+                            src="/privacyworkflow.png"
+                            alt="Privacy Workflow"
+                            fill
+                            sizes="(max-width: 1200px) 100vw, 1200px"
+                            className="object-cover"
+                        />
+                    </div>
+                    <div className='p-8 md:p-10'>
+                        <h2 className='text-2xl md:text-3xl font-bold text-slate-900 mb-4 text-center'>
+                            Workflow
+                        </h2>
+                        <p className='text-slate-600 text-sm md:text-base leading-relaxed max-w-4xl mx-auto'>
+                            The application uses <strong>React Native</strong> for the user interface and a <strong>Node.js/Express</strong> backend to call the <strong>Google Gemini API</strong>. I utilized <strong>SQLite</strong> to store data locally on the device. I also added a useful <strong>Automatic Notification Schedule</strong> feature: you can ask AI to remind you to do a task at a specific time, and the device will notify you locally. Furthermore, the app supports <strong>Session-Based Chats</strong> so users can organize different chats.
+                        </p>
+                    </div>
+                </div>
+
+                {/* Problem & Solution Section */}
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-12 items-center'>
+                    <div className='flex flex-col gap-6'>
+                        <h2 className='text-3xl md:text-4xl font-bold text-slate-900'>Problem & Solution</h2>
+                        <p className='text-slate-600 text-sm md:text-base leading-relaxed'>
+                            Analyzing the current state of AI assistants:
+                        </p>
+
+                        <div className="flex flex-col gap-5">
+                            <div>
+                                <h3 className='font-bold text-red-600 text-base mb-1'>Problems:</h3>
+                                <ul className='list-disc pl-6 text-slate-600 text-sm md:text-base space-y-2'>
+                                    <li>Most AI assistants rely on cloud processing, requiring the upload of sensitive personal data and chat history.</li>
+                                    <li>This creates a high risk of data leakage and privacy breaches since users have little control once data leaves the device.</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h3 className='font-bold text-green-600 text-base mb-1'>Solution:</h3>
+                                <ul className='list-disc pl-6 text-slate-600 text-sm md:text-base space-y-2'>
+                                    <li><strong>Privacy Agent</strong> provides a 100% <strong>local-first memory system</strong> using SQLite, ensuring chat history and reminders remain on the device.</li>
+                                    <li>By integrating <strong>Google Gemini 2.5 Flash-Lite</strong> and <strong>Gemma 3 27B</strong> via a robust Node.js backend, the app delivers high-speed, complex AI reasoning without compromising user privacy.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="relative h-[280px] md:h-[340px] w-full rounded-2xl overflow-hidden shadow-xl border border-slate-100">
+                        <Image
+                            className='object-cover'
+                            fill
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                            src="/pands.png"
+                            alt="Privacy Agent Problem and Solution"
+                        />
+                    </div>
+                </div>
+
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default privacyagent
+export default PrivacyAgent;

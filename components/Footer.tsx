@@ -10,8 +10,8 @@ const Footer = () => {
   const router = useRouter()
 
   return (
-    <div className='bg-gray-800 p-30 text-white grid grid-cols-3'>
-      <div className='w-3/4 flex flex-col gap-3'>
+    <div className='bg-gray-800 p-10 md:p-30 text-white grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-0'>
+      <div className='w-full md:w-3/4 flex flex-col gap-3'>
         <Image width={90} height={90} src="/portfolio_image-removebg-preview.png" alt="Portfolio Logo" />
         <p>I am interested in backend development and continuously learning about it. If you find a backend developer then feel free to ask.</p>
         <div className='flex gap-3'>
@@ -41,7 +41,7 @@ const Footer = () => {
           <FaLinkedin className='text-xl text-blue-300' />
           <p>@jayjoshi19</p>
         </div>
-        <button onClick={() => router.push("/contact")} className='bg-white text-black p-1 py-2 rounded-xl w-1/2'>Contact now</button>
+        <button onClick={() => router.push("/contact")} className='bg-white text-black p-1 py-2 rounded-xl w-full md:w-1/2 mt-2'>Contact now</button>
       </div>
     </div>
   )

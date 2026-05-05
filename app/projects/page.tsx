@@ -1,112 +1,167 @@
-import Link from 'next/link'
-import Image from 'next/image'
-import { FaArrowRight, FaCss3Alt, FaHtml5, FaNodeJs, FaReact } from 'react-icons/fa'
-import { PiFileSqlDuotone } from 'react-icons/pi'
-import { SiCloudinary, SiExpress, SiJavascript, SiMongodb, SiTensorflow } from 'react-icons/si'
+import Link from 'next/link';
+import Image from 'next/image';
+import { FaArrowRight, FaCss3Alt, FaHtml5, FaNodeJs, FaReact } from 'react-icons/fa';
+import { PiFileSqlDuotone } from 'react-icons/pi';
+import { SiCloudinary, SiExpress, SiJavascript, SiMongodb, SiTensorflow } from 'react-icons/si';
+
+const projects = [
+  {
+    title: 'Privacy Agent',
+    desc: 'A complete full stack AI-Driven Mobile Assistant with On-Device Memory. Stores all user chats and LLM Memory locally on device.',
+    href: '/projects/privacyagent',
+    image: '/privacyagent.png',
+    icons: [
+      { component: FaReact, color: 'text-blue-500', name: 'React' },
+      { component: FaNodeJs, color: 'text-green-500', name: 'Node.js' },
+      { component: SiExpress, color: 'text-slate-700', name: 'Express' },
+      { component: PiFileSqlDuotone, color: 'text-blue-500', name: 'SQL' },
+    ],
+    imageLeft: true,
+  },
+  {
+    title: 'Notes4All',
+    desc: 'A full stack project to help students for notes, assignments and lab manuals. Students can login and download pdf of notes or read it from anywhere. it helps students for their exams.',
+    href: '/projects/notes4all',
+    image: '/notes4all.png',
+    icons: [
+      { component: FaReact, color: 'text-blue-500', name: 'React' },
+      { component: FaNodeJs, color: 'text-green-500', name: 'Node.js' },
+      { component: SiExpress, color: 'text-slate-700', name: 'Express' },
+      { component: SiMongodb, color: 'text-green-600', name: 'MongoDB' },
+      { component: SiCloudinary, color: 'text-sky-600', name: 'Cloudinary' },
+    ],
+    imageLeft: true,
+  },
+  {
+    title: 'Smart AI Payment Tracker',
+    desc: 'A full stack project to track customer payment and trained a model with TensorFlow.js to predict the customer will delay the payment or not based on past customer transactions.',
+    href: '/projects/payment',
+    image: '/payment.png',
+    icons: [
+      { component: FaReact, color: 'text-blue-500', name: 'React' },
+      { component: FaNodeJs, color: 'text-green-500', name: 'Node.js' },
+      { component: SiExpress, color: 'text-slate-700', name: 'Express' },
+      { component: SiMongodb, color: 'text-green-600', name: 'MongoDB' },
+      { component: SiTensorflow, color: 'text-yellow-500', name: 'TensorFlow' },
+    ],
+    imageLeft: false,
+  },
+  {
+    title: 'Smart Attendance System',
+    desc: 'A full stack project to help colleges to take attendance of students quickly save time of faculty. I am use WebSockets to see realtime student attendance to faculty.',
+    href: '/projects/attendance',
+    image: '/attendance.png',
+    icons: [
+      { component: FaReact, color: 'text-blue-500', name: 'React' },
+      { component: FaNodeJs, color: 'text-green-500', name: 'Node.js' },
+      { component: SiExpress, color: 'text-slate-700', name: 'Express' },
+      { component: SiMongodb, color: 'text-green-600', name: 'MongoDB' },
+    ],
+    imageLeft: true,
+  },
+  {
+    title: 'Spotify Clone',
+    desc: 'A simple spotify working clone to learn html, css and javascript. I deployed this project on github pages. this clone plays songs from github repo.',
+    href: null,
+    image: '/spotify.png',
+    icons: [
+      { component: FaHtml5, color: 'text-orange-500', name: 'HTML5' },
+      { component: FaCss3Alt, color: 'text-blue-600', name: 'CSS3' },
+      { component: SiJavascript, color: 'text-yellow-500', name: 'JavaScript' },
+    ],
+    imageLeft: false,
+    external: true,
+  },
+  {
+    title: 'Electroplating Order Management System',
+    desc: 'This is a order management system to manage customers, orders and invoices. this is a PWA (Prograssive web app) for smartphones.',
+    href: null,
+    image: '/ele.png',
+    icons: [
+      { component: FaReact, color: 'text-blue-500', name: 'React' },
+      { component: FaNodeJs, color: 'text-green-500', name: 'Node.js' },
+      { component: SiExpress, color: 'text-slate-700', name: 'Express' },
+      { component: SiMongodb, color: 'text-green-600', name: 'MongoDB' },
+    ],
+    imageLeft: true,
+  },
+];
 
 const Projects = () => {
   return (
-    <div className='bg-gray-200 relative'>
-      <div className='bg-background text-white absolute w-full text-center pt-15 pb-20'>
-        <h1 className='text-4xl font-bold'>My Projects</h1>
-        <p className='text-xl'>I am created many projects which all shows here.</p>
+    <div className='bg-slate-100 h-screen overflow-auto text-slate-800 scrollbar-hide [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden'>
+
+      {/* Hero Section */}
+      <div className='bg-slate-900 sticky top-0 text-white py-18 px-6 text-center '>
+        <h1 className='text-4xl md:text-5xl font-extrabold tracking-tight mb-3'>
+          My Projects
+        </h1>
+        <p className='text-slate-400 text-base md:text-lg max-w-xl mx-auto'>
+          I have created many projects which are all showcased here.
+        </p>
       </div>
 
-      <div className='relative pb-20 pt-45 z-20 flex flex-col gap-10'>
-        <div className='flex gap-3 w-3/4 bg-white rounded-2xl shadow-2xl overflow-clip mx-auto'>
-          <Image width={500} height={300} className='border shadow-lg border-gray-300 object-cover' src="/privacyagent.png" alt="Privacy Agent" />
-          <div className='p-5 flex flex-col gap-5'>
-            <h1 className='text-2xl font-medium'>Privacy Agent</h1>
-            <p>A complete full stack AI-Driven Mobile Assistant with On-Device Memory. Stores all user chats and LLM Memory locally on device.</p>
-            <div className='flex text-4xl gap-5'>
-              <FaReact className='text-blue-400' />
-              <FaNodeJs className='text-green-400' />
-              <SiExpress className='text-gray-600' />
-              <PiFileSqlDuotone className='text-blue-400' />
+      {/* Projects List Section */}
+      <div className='max-w-7xl h-full relative top-[-50px] mx-auto overflow-auto px-6 md:px-12 flex flex-col gap-12 scrollbar-hide [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden'>
+        {projects.map((project, index) => (
+          <Link
+            href={project.href || '#'}
+            key={index}
+            className={`flex flex-col min-h-[500px] md:flex-row ${project.imageLeft ? 'md:flex-row' : 'md:flex-row-reverse'
+              } bg-white border border-slate-200 hover:border-blue-900 rounded-2xl shadow-xl overflow-hidden gap-0 hover:shadow-2xl transition-shadow`}
+          >
+            {/* Project Image */}
+            <div className='relative w-full md:w-1/2 h-64 md:h-auto min-h-[260px] bg-slate-200'>
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className='object-cover'
+              />
             </div>
-            <Link href={'/projects/privacyagent'} className='flex items-center text-blue-600 gap-3 text-xl cursor-pointer'>See details <FaArrowRight /></Link>
-          </div>
-        </div>
 
-        <div className='flex gap-3 w-3/4 bg-white rounded-2xl shadow-2xl overflow-clip mx-auto'>
-          <Image width={500} height={300} className='border shadow-lg border-gray-300 object-cover' src="/notes4all.png" alt="Notes4All" />
-          <div className='p-5 flex flex-col gap-5'>
-            <h1 className='text-2xl font-medium'>Notes4All</h1>
-            <p>A full stack project to help students for notes, assignments and lab manuals. Students can login and download pdf of notes or read it from anywhere. it helps students for their exams.</p>
-            <div className='flex text-4xl gap-5'>
-              <FaReact className='text-blue-400' />
-              <FaNodeJs className='text-green-400' />
-              <SiExpress className='text-gray-600' />
-              <SiMongodb className='text-green-400' />
-              <SiCloudinary className='text-blue-400' />
-            </div>
-            <Link href={'/projects/notes4all'} className='flex items-center text-blue-600 gap-3 text-xl cursor-pointer'>See details <FaArrowRight /></Link>
-          </div>
-        </div>
+            {/* Project Details */}
+            <div className='w-full md:w-1/2 p-8 md:p-10 flex flex-col justify-between'>
+              <div>
+                <h2 className='text-2xl font-bold text-slate-900 mb-3'>
+                  {project.title}
+                </h2>
+                <p className='text-slate-600 text-sm md:text-base leading-relaxed mb-8'>
+                  {project.desc}
+                </p>
+              </div>
 
-        <div className='flex gap-3 w-3/4 bg-white rounded-2xl shadow-2xl overflow-clip mx-auto'>
-          <div className='p-5 flex flex-col gap-5'>
-            <h1 className='text-2xl font-medium'>Smart AI Payment Tracker</h1>
-            <p>A full stack project to track customer payment and trained a model with <strong>TensorflowJS</strong> to predict the customer will delay the payment or not based on past customer transactions.</p>
-            <div className='flex text-4xl gap-5'>
-              <FaReact className='text-blue-400' />
-              <FaNodeJs className='text-green-400' />
-              <SiExpress className='text-gray-600' />
-              <SiMongodb className='text-green-400' />
-              <SiTensorflow className='text-yellow-400' />
-            </div>
-            <Link href={'/projects/payment'} className='flex items-center text-blue-600 gap-3 text-xl cursor-pointer'>See details <FaArrowRight /></Link>
-          </div>
-          <Image width={500} height={300} className='border shadow-lg border-gray-300 object-cover' src="/payment.png" alt="Smart AI Payment Tracker" />
-        </div>
+              {/* Technologies / Footer Stack */}
+              <div>
+                <div className='flex text-2xl gap-4 items-center mb-6'>
+                  {project.icons.map((Icon, idx) => {
+                    const IconComp = Icon.component;
+                    return (
+                      <div
+                        key={idx}
+                        className="p-2 rounded-lg bg-slate-50 border border-slate-100"
+                        title={Icon.name}
+                      >
+                        <IconComp className={`${Icon.color}`} />
+                      </div>
+                    );
+                  })}
+                </div>
 
-        <div className='flex gap-3 w-3/4 bg-white rounded-2xl shadow-2xl overflow-clip mx-auto'>
-          <Image width={500} height={300} className='border shadow-lg border-gray-300 object-cover' src="/attendance.png" alt="Smart Attendance System" />
-          <div className='p-5 flex flex-col gap-5'>
-            <h1 className='text-2xl font-medium'>Smart Attendance System</h1>
-            <p>A full stack project to help colleges to take attendance of students quickly save time of faculty. I am use <strong>WebSockets</strong> to see realtime student attendance to faculty.</p>
-            <div className='flex text-4xl gap-5'>
-              <FaReact className='text-blue-400' />
-              <FaNodeJs className='text-green-400' />
-              <SiExpress className='text-gray-600' />
-              <SiMongodb className='text-green-400' />
+                {project.href && (
+                  <div className='inline-flex items-center text-blue-600 font-semibold gap-2 text-base md:text-lg hover:text-blue-700 transition-colors group'>
+                    See details{' '}
+                    <FaArrowRight className='group-hover:translate-x-1 transition-transform' />
+                  </div>
+                )}
+              </div>
             </div>
-            <Link href={'/projects/attendance'} className='flex items-center text-blue-600 gap-3 text-xl cursor-pointer'>See details <FaArrowRight /></Link>
-          </div>
-        </div>
-
-        <div className='flex gap-3 w-3/4 bg-white rounded-2xl shadow-2xl overflow-clip mx-auto'>
-          <div className='p-5 flex flex-col gap-5'>
-            <h1 className='text-2xl font-medium'>Spotify Clone</h1>
-            <p>A simple spotify working clone to learn html, css and javascript. I deployed this project on github pages. this clone plays songs from github repo.</p>
-            <div className='flex text-4xl gap-5'>
-              <FaHtml5 className='text-orange-400' />
-              <FaCss3Alt className='text-blue-400' />
-              <SiJavascript className='text-yellow-400' />
-            </div>
-            {/* <p className='flex items-center text-blue-600 gap-3 text-xl cursor-pointer'>See details <FaArrowRight /></p> */}
-          </div>
-          <Image width={500} height={300} className='border shadow-lg border-gray-300 object-cover' src="/spotify.png" alt="Spotify Clone" />
-        </div>
-
-        <div className='flex gap-3 w-3/4 bg-white rounded-2xl shadow-2xl overflow-clip mx-auto'>
-          <Image width={500} height={300} className='border shadow-lg border-gray-300 object-cover' src="/ele.png" alt="Electroplating Order Management" />
-          <div className='p-5 flex flex-col gap-5'>
-            <h1 className='text-2xl font-medium'>Electroplating Order Management System</h1>
-            <p>This is a order management system to manage customers, orders and invoices. this is a PWA (Prograssive web app) for smartphones.</p>
-            <div className='flex text-4xl gap-5'>
-              <FaReact className='text-blue-400' />
-              <FaNodeJs className='text-green-400' />
-              <SiExpress className='text-gray-600' />
-              <SiMongodb className='text-green-400' />
-            </div>
-            {/* <p className='flex items-center text-blue-600 gap-3 text-xl cursor-pointer'>See details <FaArrowRight /></p> */}
-          </div>
-        </div>
+          </Link>
+        ))}
       </div>
-
     </div>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;

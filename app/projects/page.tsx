@@ -89,10 +89,8 @@ const projects = [
 
 const Projects = () => {
   return (
-    <div className='bg-slate-100 h-screen overflow-auto text-slate-800 scrollbar-hide [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden'>
-
-      {/* Hero Section */}
-      <div className='bg-slate-900 sticky top-0 text-white py-18 px-6 text-center '>
+    <div className='bg-slate-100 text-slate-800'>
+      <div className='bg-slate-900 text-white py-18 px-6 text-center '>
         <h1 className='text-4xl md:text-5xl font-extrabold tracking-tight mb-3'>
           My Projects
         </h1>
@@ -102,7 +100,7 @@ const Projects = () => {
       </div>
 
       {/* Projects List Section */}
-      <div className='max-w-7xl h-full relative top-[-50px] mx-auto overflow-auto px-6 md:px-12 flex flex-col gap-12 scrollbar-hide [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden'>
+      <div className='max-w-7xl h-full relative top-[-50px] mx-auto px-6 md:px-12 pt-10 flex flex-col gap-12'>
         {projects.map((project, index) => (
           <Link
             href={project.href || '#'}

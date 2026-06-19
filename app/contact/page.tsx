@@ -6,9 +6,9 @@ import { IoCallOutline } from 'react-icons/io5';
 
 const ContactPage = () => {
     return (
-        <div className='bg-slate-50 min-h-screen'>
+        <div className='bg-slate-200 min-h-screen'>
             {/* Header Section */}
-            <div className='bg-slate-900 text-white py-20 px-6 text-center'>
+            <div className='bg-blue-900 text-white py-20 px-6 text-center'>
                 <h1 className='text-4xl md:text-5xl font-extrabold tracking-tight mb-3'>
                     Contact Now
                 </h1>

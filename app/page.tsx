@@ -1,7 +1,9 @@
+"use client"
 import SwipeCardStack from "@/components/Projects";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import {
   FaArrowRight,
   FaCss3Alt,
@@ -10,7 +12,8 @@ import {
   FaReact,
   FaStar,
   FaGraduationCap,
-  FaBriefcase
+  FaBriefcase,
+  FaLinkedin
 } from "react-icons/fa";
 import { GrMysql } from "react-icons/gr";
 import { IoBookmark, IoShieldCheckmark } from "react-icons/io5";
@@ -18,7 +21,7 @@ import { RiJavascriptFill } from "react-icons/ri";
 import { SiExpress, SiMongodb, SiNextdotjs } from "react-icons/si";
 import { TbBrandReactNative } from "react-icons/tb";
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: "Jay Joshi | Full Stack MERN Developer in Rajkot",
   description: "Portfolio of Jay Joshi, a 4th-semester CS student at VVP Engineering College. Specializing in MERN stack, Next.js, and Privacy-First AI Agents. Based in Rajkot, Gujarat.",
   keywords: [
@@ -72,11 +75,19 @@ const projects = [
 
 const experiences = [
   {
+    company: "Apex Horizon",
+    role: "Building Apex Horizon",
+    period: "June 2026 - present",
+    desc: "Provide Custom Websites, Software Solutions, AI Website fixes, etc.",
+    image: "/apexhorizon.png",
+    icon: FaBriefcase,
+  },
+  {
     company: "White Label Fox Pvt. Ltd.",
     role: "MERN Intern",
     period: "Jan 2026 - Mar 2026",
     desc: "Learned real-world product development with hands-on experience using Node.js, Express, Nest.js, and Next.js.",
-    image: "/white-fox.jpg",
+    image: "/white-fox-image.jpg",
     icon: FaBriefcase,
   },
   {
@@ -98,33 +109,66 @@ const experiences = [
 ];
 
 export default function Home() {
+  const router = useRouter()
   return (
     <div className="bg-slate-50 min-h-screen text-slate-800 font-sans selection:bg-blue-100">
       {/* Hero Section */}
-      <div className="relative w-full h-[360px] md:h-[500px] bg-slate-900 md:bg-slate-900/60 text-white overflow-hidden">
+      <div className="relative w-full h-[460px] md:h-[660px] bg-slate-900 md:bg-slate-900/60 text-white overflow-hidden">
         <Image
-          src="/me.jpg"
+          src="/bgofheader.png"
           alt="Jay Joshi - Full Stack Developer and MERN Stack Expert"
           fill
           priority
-          className="object-cover object-center md:object-top mix-blend-overlay"
+          className="object-cover object-center md:object-center mix-blend-overlay"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/3 via-slate-900/3 to-transparent" />
 
         <div className="max-w-7xl mx-auto flex flex-col justify-end md:items-end h-full px-6 md:px-12 pb-12 md:pb-16 relative z-10">
           <div className="flex flex-col md:items-end gap-2 max-w-3xl">
-            <span className="text-blue-400 font-semibold text-sm md:text-base tracking-widest uppercase">
+            <span className="text-blue-100 font-semibold text-sm md:text-base tracking-widest uppercase">
               Full Stack Developer
             </span>
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">
               Jay Joshi
             </h1>
-            <p className="text-lg md:text-end md:text-2xl text-slate-300 font-medium max-w-2xl mt-1">
-              Building practical, real-world utility tools and privacy-first web solutions that solve actual business challenges.
-            </p>
+            <div>
+              <p className="text-lg md:text-end md:text-2xl text-slate-300 font-medium max-w-xl mt-1">
+                Building Apex Horizon — Custom Websites & Software Solutions <br />
+                Helping businesses build modern web applications and improve existing websites.
+              </p>
+              <div className="w-full flex md:justify-end gap-3 my-5">
+                <button onClick={() => router.push('/contact')} className="bg-blue-600 hover:bg-blue-700 text-white md:text-xl px-5 py-2.5 rounded-xl shadow-sm transition-all hover:shadow-md">Work With Me</button>
+                <button onClick={() => router.push('/projects')} className="bg-green-600 hover:bg-green-700 text-white md:text-xl px-5 py-2.5 rounded-xl shadow-sm transition-all hover:shadow-md">View Projects</button>
+              </div>
+              <p className="md:text-end md:text-lg text-blue-200 font-medium max-w-2xl mt-1">Available for freelance projects</p>
+            </div>
           </div>
         </div>
       </div>
+
+      {/* Social Proof Section */}
+      <section className="py-12 border-b border-slate-200 bg-white">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 text-center">
+            <div className="flex flex-col items-center justify-center space-y-2 p-4 rounded-2xl hover:bg-slate-50 transition-colors">
+              <span className="text-4xl md:text-5xl font-extrabold text-blue-600">10+</span>
+              <span className="text-sm md:text-base font-semibold text-slate-600">Projects Built</span>
+            </div>
+            <div className="flex flex-col items-center justify-center space-y-2 p-4 rounded-2xl hover:bg-slate-50 transition-colors">
+              <span className="text-4xl md:text-5xl font-extrabold text-blue-600">FULL STACK</span>
+              <span className="text-sm md:text-base font-semibold text-slate-600">Internship Experience</span>
+            </div>
+            <div className="flex flex-col items-center justify-center space-y-2 p-4 rounded-2xl hover:bg-slate-50 transition-colors">
+              <span className="text-4xl md:text-5xl font-extrabold text-blue-600">100+</span>
+              <span className="text-sm md:text-base font-semibold text-slate-600">Visitors Across Projects</span>
+            </div>
+            <div className="flex flex-col items-center justify-center space-y-2 p-4 rounded-2xl hover:bg-slate-50 transition-colors">
+              <span className="text-4xl md:text-5xl font-extrabold text-emerald-500">Open</span>
+              <span className="text-sm md:text-base font-semibold text-slate-600">For Collaboration</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Skills Section */}
       <section id="skills" className="py-20 px-6 md:px-12 max-w-7xl mx-auto">
@@ -232,7 +276,7 @@ export default function Home() {
                     Bachelor's in Computer Science
                   </h3>
                   <p className="text-slate-700 text-sm leading-relaxed">
-                    Currently pursuing a Bachelor's degree at <strong>V.V.P. Engineering College</strong>, Rajkot. Maintained a 9.13 CPI in the first year.
+                    Currently pursuing a Bachelor's degree at <strong>V.V.P. Engineering College</strong>, Rajkot. Maintained a <strong>9.13 CPI</strong> in the first year.
                   </p>
                 </div>
               </div>
@@ -265,12 +309,12 @@ export default function Home() {
               {experiences.map((exp, index) => {
                 const Icon = exp.icon;
                 return (
+                  <div key={index} className="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-center items-end">
                   <div
-                    key={index}
-                    className="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex items-start gap-5"
+                    className="flex items-start gap-5"
                   >
                     <div className="p-3 rounded-xl bg-slate-50 text-blue-600 text-2xl shrink-0">
-                      <Icon />
+                      {exp.image ? <Image src={exp.image} width={80} height={80}  alt="Logo"/> : <Icon />}
                     </div>
                     <div>
                       <div className="flex justify-between items-baseline gap-4 flex-wrap">
@@ -288,7 +332,13 @@ export default function Home() {
                         {exp.desc}
                       </p>
                     </div>
+
                   </div>
+                    {exp.company === 'Apex Horizon' && <Link href={"https://www.linkedin.com/company/apex-horizon"} className="flex gap-2 mt-5 md:mt-0">
+                      <FaLinkedin className='text-2xl text-blue-600' />
+                      <div>@apexhorizon</div>
+                    </Link>}
+                    </div>
                 );
               })}
             </div>
